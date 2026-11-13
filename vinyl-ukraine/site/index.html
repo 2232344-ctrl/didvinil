@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VINYL UKRAINE — довідник вінілової спільноти</title>
+<meta name="description" content="Довідник магазинів вінілових платівок, програвачів, hi-fi техніки та майстрів в Україні: пошук за містом, послугами та тегами.">
+<meta property="og:title" content="VINYL UKRAINE — довідник вінілової спільноти">
+<meta property="og:description" content="Магазини платівок, програвачі, hi-fi техніка, ремонт і майстри по всій Україні.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VINYL UKRAINE">
+<meta property="og:locale" content="uk_UA">
+<link rel="canonical" href="https://vinil.in.ua/">
+<meta property="og:url" content="https://vinil.in.ua/">
+<meta property="og:image" content="https://vinil.in.ua/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VINYL UKRAINE — довідник вінілової спільноти">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VINYL UKRAINE — довідник вінілової спільноти">
+<meta name="twitter:description" content="Магазини платівок, програвачі, hi-fi техніка, ремонт і майстри по всій Україні.">
+<meta name="twitter:image" content="https://vinil.in.ua/og-image.png">
+<meta name="theme-color" content="#b5482b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23181613'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%23b5482b'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%23181613'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f6f3ee; --card-bg:#fff; --text:#1c1a17; --muted:#6b665e;
+    --accent:#b5482b; --accent-dark:#8f3820; --border:#e4ddd1;
+    --chip-bg:#efe6d8; --chip-text:#5a4b32;
+    --pin-bg:#fff4e0; --pin-border:#e0a941; --green:#2e8b57;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#181613; --card-bg:#221f1b; --text:#f1ece3; --muted:#a89f8f;
+      --accent:#e2733f; --accent-dark:#f08a58; --border:#332e27;
+      --chip-bg:#332b20; --chip-text:#e2cfa8; --pin-bg:#3a2c14; --green:#4caf82;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#181613; --card-bg:#221f1b; --text:#f1ece3; --muted:#a89f8f;
+    --accent:#e2733f; --accent-dark:#f08a58; --border:#332e27;
+    --chip-bg:#332b20; --chip-text:#e2cfa8; --pin-bg:#3a2c14; --green:#4caf82;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    min-height:100vh; -webkit-text-size-adjust:100%;
+  }
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px;}
+  header{
+    position:sticky; top:0; z-index:10;
+    padding:env(safe-area-inset-top,0px) 16px 0;
+    background:var(--bg); border-bottom:1px solid var(--border);
+    transition:transform .25s ease;
+  }
+  @media (max-width:640px){ header.header-hidden{transform:translateY(-100%);} }
+  .header-inner{max-width:1080px;margin:0 auto;padding:14px 0;}
+  .title-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px;}
+  h1{font-size:22px;margin:0;letter-spacing:.3px;}
+  h1 span{color:var(--accent);}
+  .top-actions{display:flex;gap:8px;align-items:center;}
+  .addbtn{
+    white-space:nowrap; padding:8px 14px; border-radius:12px;
+    background:var(--accent); color:#fff; font-size:14px; font-weight:600; text-decoration:none;
+  }
+  .addbtn:hover{background:var(--accent-dark);}
+  .iconbtn{
+    width:36px;height:36px;border-radius:12px;border:1px solid var(--border);
+    background:var(--card-bg);color:var(--text);font-size:16px;cursor:pointer;
+  }
+  .sub{color:var(--muted);font-size:13px;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+  .sync-dot{width:8px;height:8px;border-radius:50%;background:#9a9a9a;display:inline-block;margin-inline-end:4px;}
+  .sync-dot.ok{background:#4caf82;} .sync-dot.err{background:#c0553a;}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;}
+  .search-wrap{position:relative;flex:1 1 200px;}
+  .search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted);pointer-events:none;}
+  input[type=search], select{
+    padding:11px 14px;border-radius:12px;border:1px solid var(--border);
+    background:var(--card-bg);color:var(--text);font-size:16px;font-family:inherit;
+  }
+  input[type=search]{width:100%;padding-left:38px;-webkit-appearance:none;appearance:none;}
+  select{max-width:100%;font-size:14px;}
+  button.sortbtn{
+    padding:11px 14px;border-radius:12px;border:1px solid var(--border);
+    background:var(--card-bg);color:var(--text);font-size:14px;cursor:pointer;
+  }
+  .quick{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+  .quick button{
+    font-family:inherit;font-size:12.5px;padding:6px 11px;border-radius:999px;
+    border:1px solid var(--border);background:var(--card-bg);color:var(--text);cursor:pointer;
+  }
+  .quick button:hover{border-color:var(--accent);}
+  .quick button small{opacity:.65;font-size:11px;margin-left:2px;}
+  .quick button.limit-shake{animation:shake .3s;}
+  .quick button.on{background:var(--accent);color:#fff;border-color:var(--accent-dark);}
+  main{max-width:1080px;margin:0 auto;padding:14px 16px 16px;}
+  .count{color:var(--muted);font-size:13px;margin-bottom:8px;}
+  .active-filters{display:none;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:10px;}
+  .filter-pill{display:inline-flex;align-items:center;gap:4px;background:var(--accent);color:#fff;font-size:12px;font-weight:600;padding:5px 6px 5px 10px;border-radius:999px;}
+  .pill-x{background:rgba(255,255,255,.25);border:none;color:#fff;width:18px;height:18px;border-radius:50%;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;}
+  .clear-filters{background:none;border:1px solid var(--border);color:var(--muted);font-size:12px;padding:5px 10px;border-radius:999px;cursor:pointer;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+  .card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0;}
+  .card.pinned{border-color:var(--pin-border);background:var(--pin-bg);}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .card-name{font-size:17px;font-weight:700;margin:0;overflow-wrap:anywhere;}
+  .badges{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:0 0 auto;}
+  .tag-badge,.discount-badge{font-size:11px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;border:1px solid transparent;font-family:inherit;line-height:1.3;}
+  button.tag-badge{cursor:pointer;} button.tag-badge:hover{border-color:var(--accent);}
+  .tag-badge.active{outline:2px solid var(--accent);outline-offset:1px;}
+  .rec-badge{background:rgba(224,169,65,.25);color:var(--accent-dark);border-color:var(--pin-border);}
+  .ver-badge{background:rgba(46,139,87,.15);color:var(--green);border-color:var(--green);}
+  .discount-badge{color:#fff;background:var(--green);border-radius:6px;}
+  .city{font-size:13px;color:var(--muted);}
+  .city a{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;}
+  .city a:hover{color:var(--text, currentColor);text-decoration-style:solid;}
+  .city .addr{display:block;margin-top:2px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{background:var(--chip-bg);color:var(--chip-text);font-size:12px;padding:4px 9px;border-radius:999px;border:1px solid transparent;font-family:inherit;cursor:pointer;line-height:1.3;}
+  .chip:hover{border-color:var(--accent);}
+  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent-dark);}
+  .chip.limit-shake{animation:shake .3s;}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+  .comment{font-size:13.5px;opacity:.85;line-height:1.4;overflow-wrap:anywhere;}
+  .phone{font-size:13.5px;}
+  .phone a{color:inherit;}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px;}
+  .links a{font-size:12.5px;text-decoration:none;color:var(--accent-dark);border:1px solid var(--border);padding:6px 10px;border-radius:9px;}
+  .links a:hover{border-color:var(--accent);}
+  .empty{text-align:center;color:var(--muted);padding:60px 16px;}
+  footer{max-width:1080px;margin:0 auto;padding:10px 16px calc(30px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:12px;}
+  footer a{color:var(--accent-dark);}
+  .totop{
+    position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));
+    width:44px;height:44px;border-radius:50%;border:1px solid var(--border);
+    background:var(--card-bg);color:var(--text);font-size:18px;cursor:pointer;
+    display:none;box-shadow:0 2px 10px rgba(0,0,0,.15);
+  }
+  .totop.show{display:block;}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+  .seo-links{max-width:1080px;margin:0 auto;padding:6px 16px 0;font-size:12.5px;line-height:1.9;color:var(--muted);}
+  .seo-links a{color:var(--accent-dark);}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="title-row">
+      <h1>VINYL <span>UKRAINE</span></h1>
+      <div class="top-actions">
+        <button class="iconbtn" id="themeBtn" type="button" aria-label="Змінити тему" title="Тема">◐</button>
+        <a id="addBtn" class="addbtn" href="https://docs.google.com/forms/d/1Ch0VdB88GLL0KL8flPXCxhkavUXXy0gpCD1Q-sTQX4Y/viewform" target="_blank" rel="noopener">＋ Доповнити</a>
+      </div>
+    </div>
+    <div class="sub">
+      <span><span id="syncDot" class="sync-dot"></span><span id="syncText">синхронізація…</span></span>
+      <span>·</span>
+      <span id="totalCount">0 записів</span>
+    </div>
+    <div class="controls">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="search" aria-label="Пошук" placeholder="Пошук: назва, місто, послуги…" autocomplete="off">
+      </div>
+    </div>
+    <div class="quick" id="quick" aria-label="Популярні теги"></div>
+  </div>
+</header>
+<main>
+  <div class="active-filters" id="activeFilters"></div>
+  <div class="count" id="resultsCount" aria-live="polite"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="emptyState" style="display:none;">Нічого не знайдено. Спробуйте інший запит або <button type="button" class="clear-filters" id="emptyReset">скиньте фільтри</button>.</div>
+</main>
+<footer>
+  Рік створення сайту: 2026. З усіх питань звертайтесь: <a href="mailto:vinyl.help.kiev@gmail.com">vinyl.help.kiev@gmail.com</a>
+  <div id="visits" style="margin-top:6px" hidden>Відвідувань: <b id="visitsTotal">–</b> · сьогодні: <b id="visitsToday">–</b></div>
+</footer>
+<nav class="seo-links" aria-label="Каталог за містами та категоріями">
+  <div><strong>Міста:</strong> <a href="/vinil/kyiv/">Київ</a> · <a href="/vinil/lviv/">Львів</a> · <a href="/vinil/dnipro/">Дніпро</a> · <a href="/vinil/odesa/">Одеса</a> · <a href="/vinil/kharkiv/">Харків</a> · <a href="/vinil/kryvyi-rih/">Кривий Ріг</a></div>
+  <div><strong>Категорії:</strong> <a href="/katalog/plativky/">Магазини вінілових платівок</a> · <a href="/katalog/prohravachi/">Програвачі вінілу</a> · <a href="/katalog/remont/">Ремонт програвачів</a> · <a href="/katalog/hifi/">Hi-Fi техніка</a> · <a href="/katalog/kasety-cd/">Касети і CD</a> · <a href="/katalog/vintazh/">Вінтажний вініл</a> · <a href="/katalog/kavyarni/">Кав'ярні з вінілом</a></div>
+</nav>
+<button class="totop" id="toTop" type="button" aria-label="Нагору">↑</button>
+
+<script>
+"use strict";
+const CSV_URL = "data.php"; // серверний кеш: дані оновлюються раз на 10 хв
+const PIN_NAME = "DiDViNiL";
+const CACHE_KEY = "vinyl-ua-csv-v2";
+/* Очищення старого кешу: застарілі версії видаляються автоматично,
+   а адреса з ?reset очищує кеш і тему вручну. */
+(function clearOldCache(){
+  try{
+    localStorage.removeItem("vinyl-ua-csv-v1");
+    if(/[?&]reset\b/.test(location.search)){
+      localStorage.removeItem(CACHE_KEY);
+      localStorage.removeItem("vinyl-theme");
+      history.replaceState(null, "", location.pathname + location.hash);
+    }
+  }catch(e){}
+})();
+const MAX_TAG_FILTERS = 3;
+const MAX_SEARCH_WORDS = 5;
+
+/* ---------- CSV ---------- */
+function parseCSV(text){
+  const rows = []; let row = [], field = "", inQ = false;
+  for(let i=0;i<text.length;i++){
+    const c = text[i];
+    if(inQ){
+      if(c === '"'){ if(text[i+1] === '"'){ field += '"'; i++; } else inQ = false; }
+      else field += c;
+    } else if(c === '"') inQ = true;
+    else if(c === ',') { row.push(field); field = ""; }
+    else if(c === '\r') {}
+    else if(c === '\n') { row.push(field); rows.push(row); row = []; field = ""; }
+    else field += c;
+  }
+  if(field.length || row.length){ row.push(field); rows.push(row); }
+  return rows.filter(r => r.some(v => (v||"").trim() !== ""));
+}
+
+/* Колонки зіставляються за назвою заголовка: порядок у таблиці не важливий. */
+const HEADER_MAP = {
+  "позначка часу":"timestamp","timestamp":"timestamp",
+  "рекомендація":"recommend","рекомендую":"recommend","рекомендовано":"recommend",
+  "перевірено":"verified","перевірений":"verified","проверено":"verified",
+  "знижка":"discount","скидка":"discount","discount":"discount",
+  "назва/імя":"name","назва/ім'я":"name","назва":"name",
+  "пропозиції":"tags",
+  "website":"website","telegram":"telegram","instagram":"instagram","threads":"threads","facebook":"facebook",
+  "місто":"city","адреса":"address","телефон":"phone","коментар":"comment",
+  "viber":"viber","whatsapp":"whatsapp","e-mail":"email","email":"email",
+  "discord":"discord","tiktok":"tiktok","youtube":"youtube","pinterest":"pinterest"
+};
+
+function rowsToRecords(rows){
+  if(!rows.length) return [];
+  const header = rows[0].map(h => (h||"").trim().toLowerCase());
+  const keys = header.map((h,i) => (h === "" && i === 0) ? "timestamp" : (HEADER_MAP[h] || null));
+  return rows.slice(1).map(r => {
+    const rec = {};
+    Object.values(HEADER_MAP).forEach(k => rec[k] = "");
+    keys.forEach((k,i) => { if(k) rec[k] = (r[i] || "").trim(); });
+    return rec;
+  });
+}
+
+/* ---------- Нормалізація (виправляє одруки навіть у живій таблиці) ---------- */
+const TAG_FIX = {
+  "кавярня":"кав'ярня","кав’ярня":"кав'ярня","кафе":"кафе",
+  "фонокоретори":"фонокоректори","аксессуари":"аксесуари",
+  "cd":"CD","диски":"диски","мерч":"мерч"
+};
+const CITY_FIX = {
+  "одесса":"Одеса","харьків":"Харків","европа":"Європа","днепр":"Дніпро","киев":"Київ","львов":"Львів"
+};
+function normTags(s){
+  const seen = new Set(), out = [];
+  (s||"").split(",").forEach(t => {
+    t = t.trim(); if(!t) return;
+    const low = t.toLowerCase();
+    const fixed = TAG_FIX[low] || low;
+    if(!seen.has(fixed.toLowerCase())){ seen.add(fixed.toLowerCase()); out.push(fixed); }
+  });
+  return out;
+}
+function normCity(s){
+  s = (s||"").trim(); if(!s) return "";
+  return CITY_FIX[s.toLowerCase()] || s;
+}
+
+/* ---------- Посилання ---------- */
+function domainFromUrl(url){
+  try{ return new URL(/^https?:\/\//i.test(url) ? url : "https://" + url).hostname.replace(/^www\./,""); }
+  catch(e){ return url; }
+}
+function isUrl(v){ return /^(https?:\/\/|www\.)/i.test(v) || /\.[a-z]{2,}(\/|$)/i.test(v); }
+function toHref(v, kind){
+  v = (v||"").trim();
+  if(!v) return null;
+  if(/^https?:\/\//i.test(v)) return v;
+  if(/\s/.test(v) && kind !== "email") return null;
+  const h = v.replace(/^@/,"");
+  switch(kind){
+    case "telegram": return "https://t.me/" + h;
+    case "instagram": return "https://instagram.com/" + h;
+    case "facebook": return "https://facebook.com/" + h;
+    case "threads": return "https://threads.net/@" + h;
+    case "tiktok": return "https://www.tiktok.com/@" + h;
+    case "youtube": return "https://www.youtube.com/@" + h;
+    case "email": return /^[^\s@]+@[^\s@]+$/.test(v.replace(/^mailto:/i,"")) ? "mailto:" + v.replace(/^mailto:/i,"") : null;
+    case "discord": return /^discord\.(gg|com)\//i.test(v) ? "https://" + v : (isUrl(v) ? "https://" + v : "https://discord.gg/" + v);
+    default: return isUrl(v) ? "https://" + v.replace(/^https?:\/\//i,"") : null;
+  }
+}
+const LINK_DEFS = [
+  {key:"website",label:"Сайт"},{key:"telegram",label:"Telegram"},{key:"instagram",label:"Instagram"},
+  {key:"threads",label:"Threads"},{key:"facebook",label:"Facebook"},{key:"tiktok",label:"TikTok"},
+  {key:"youtube",label:"YouTube"},{key:"pinterest",label:"Pinterest"},{key:"viber",label:"Viber"},
+  {key:"whatsapp",label:"WhatsApp"},{key:"discord",label:"Discord"},{key:"email",label:"E-mail"}
+];
+/* Підпис за фактичним хостом: у колонку "discord" часто кладуть Discogs тощо. */
+function labelFor(href, fallback){
+  let host = "";
+  try{ host = new URL(href).hostname.replace(/^www\./,""); }catch(e){}
+  if(/discogs\.com$/.test(host)) return "Discogs";
+  if(/(^|\.)t\.me$/.test(host)) return "Telegram";
+  if(/instagram\.com$/.test(host)) return "Instagram";
+  if(/facebook\.com$/.test(host)) return "Facebook";
+  if(/threads\.(net|com)$/.test(host)) return "Threads";
+  if(/tiktok\.com$/.test(host)) return "TikTok";
+  if(/olx\.ua$/.test(host)) return "OLX";
+  if(/docs\.google\.com$/.test(host)) return "Таблиця";
+  return fallback;
+}
+function phonesHtml(str){
+  return String(str).split(/[,;\/]/).map(x => x.trim()).filter(Boolean).map(x => {
+    const t = telHref(x);
+    return t ? `<a href="${escapeHtml(t)}">${escapeHtml(x)}</a>` : escapeHtml(x);
+  }).join(", ");
+}
+function telHref(p){
+  let d = p.replace(/[^\d+]/g,"");
+  if(!d) return null;
+  if(d.startsWith("+")) return "tel:" + d;
+  if(d.startsWith("380")) return "tel:+" + d;
+  if(d.startsWith("0") && d.length === 10) return "tel:+38" + d;
+  if(d.startsWith("8") && d.length === 11 && d[1] === "0") return "tel:+3" + d;
+  return "tel:" + d;
+}
+function isPhoneLike(s){ return /^[\d\s()+\-]{7,}$/.test(s||""); }
+
+/* ---------- Записи ---------- */
+function buildDisplayName(rec){
+  if(rec.name) return rec.name;
+  for(const f of ["website","telegram","instagram","threads","facebook","tiktok","viber","whatsapp","discord"]){
+    const v = rec[f]; if(!v) continue;
+    if(f === "website") return domainFromUrl(v);
+    try{
+      const u = new URL(/^https?:\/\//i.test(v) ? v : "https://" + v);
+      const seg = u.pathname.split("/").filter(Boolean).pop();
+      if(seg && f !== "facebook") return seg.replace(/^@/,"");
+      return domainFromUrl(v);
+    }catch(e){ return v.replace(/^@/,""); }
+  }
+  return "Без назви";
+}
+function parseTimestamp(ts){
+  const m = (ts||"").trim().match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+  if(!m) return null;
+  const t = new Date(+m[3], +m[2]-1, +m[1], +m[4], +m[5], +(m[6]||0)).getTime();
+  return isNaN(t) ? null : t;
+}
+function urlKey(v){
+  return (v||"").toLowerCase().replace(/^https?:\/\//,"").replace(/^www\./,"").replace(/\/+$/,"").replace(/^t\.me\/@?/,"t.me/");
+}
+
+/* Дублікати об'єднуємо лише якщо збігається сайт або Telegram І назви однакові (або одна порожня). */
+function dedupe(list){
+  const out = [], index = new Map();
+  for(const rec of list){
+    const keys = ["website","telegram","instagram"].map(k => rec[k] ? k + ":" + urlKey(rec[k]) : null).filter(Boolean);
+    let target = null;
+    for(const k of keys){
+      const cand = index.get(k);
+      if(cand && (!cand.name || !rec.name || cand.name.toLowerCase() === rec.name.toLowerCase())){ target = cand; break; }
+    }
+    if(target){
+      for(const f of Object.keys(rec)){
+        if(f === "tagList") continue;
+        if(!target[f] && rec[f]) target[f] = rec[f];
+      }
+      target.tagList = [...new Set([...(target.tagList||[]), ...(rec.tagList||[])])];
+      if(rec.ts !== null && (target.ts === null || rec.ts > target.ts)) target.ts = rec.ts;
+    } else {
+      out.push(rec);
+    }
+    keys.forEach(k => { if(!index.has(k)) index.set(k, target || rec); });
+  }
+  return out;
+}
+
+function normalize(records){
+  const list = records
+    .filter(r => Object.values(r).some(v => v !== ""))
+    .map((rec, idx) => {
+      const r = {...rec};
+      // телефон, що з'їхав у колонку коментаря/міста
+      if(!r.phone && isPhoneLike(r.comment)){ r.phone = r.comment; r.comment = ""; }
+      r.city = normCity(r.city);
+      r.tagList = normTags(r.tags);
+      // дата останньої зміни: «Оновлено дд.мм.рррр.» в кінці коментаря піднімає картку вгору
+      const um = (r.comment||"").match(/Оновлено\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/i);
+      const upd = um ? new Date(+um[3], +um[2]-1, +um[1], 23, 59, 59).getTime() : null;
+      r.ts = parseTimestamp(r.timestamp);
+      if(upd !== null && !isNaN(upd) && (r.ts === null || upd > r.ts)) r.ts = upd;
+      r.closed = r.tagList.some(t => t === "зачинено" || t === "закрито");
+      r.origIndex = idx;
+      return r;
+    });
+  const merged = dedupe(list);
+  merged.forEach(r => {
+    r.displayName = buildDisplayName(r);
+    r.tags = r.tagList.join(", ");
+    // текст для пошуку: лише змістовні поля, без URL і службових даних
+    r.searchText = [r.displayName, r.tags, r.city, r.address, r.comment].join(" ").toLowerCase();
+  });
+  return merged;
+}
+
+/* ---------- UI ---------- */
+function escapeHtml(s){
+  return (s||"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+const isOn = v => String(v||"").trim() === "1";
+const $ = id => document.getElementById(id);
+
+let RECORDS = [];
+const selectedTags = new Set();
+const selectedFlags = new Set();
+const FLAG_LABELS = {recommend:"рекомендовано", verified:"перевірено"};
+
+function discountText(d){
+  d = (d||"").trim(); if(!d) return "";
+  return (d.startsWith("-") || d.includes("%")) ? d : "-" + d + "%";
+}
+
+function cardHtml(rec){
+  const isPinned = rec.displayName.trim().toLowerCase() === PIN_NAME.toLowerCase();
+  const shown = new Set();
+  const links = LINK_DEFS.map(({key,label}) => {
+    const href = toHref(rec[key], key);
+    if(!href) return "";
+    const norm = urlKey(href);
+    if(shown.has(norm)) return "";
+    shown.add(norm);
+    return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(labelFor(href,label))}</a>`;
+  }).join("");
+  const tel = rec.phone ? telHref(rec.phone) : null;
+  return `
+  <article class="card${isPinned ? " pinned" : ""}">
+    <div class="card-top">
+      <h2 class="card-name">${escapeHtml(rec.displayName)}</h2>
+      <div class="badges">
+        ${rec.discount ? `<span class="discount-badge">${escapeHtml(discountText(rec.discount))}</span>` : ""}
+        ${isOn(rec.recommend) ? `<button type="button" class="tag-badge rec-badge${selectedFlags.has("recommend") ? " active" : ""}" data-flag="recommend">рекомендовано</button>` : ""}
+        ${isOn(rec.verified) ? `<button type="button" class="tag-badge ver-badge${selectedFlags.has("verified") ? " active" : ""}" data-flag="verified">перевірено</button>` : ""}
+      </div>
+    </div>
+    ${locHtml(rec)}
+    ${rec.tagList.length ? `<div class="chips">${rec.tagList.map(t => `<button type="button" class="chip${selectedTags.has(t.toLowerCase()) ? " active" : ""}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}</div>` : ""}
+    ${rec.comment ? `<div class="comment">${escapeHtml(rec.comment)}</div>` : ""}
+    ${rec.phone ? `<div class="phone">☎ ${phonesHtml(rec.phone)}</div>` : ""}
+    ${links ? `<div class="links">${links}</div>` : ""}
+  </article>`;
+}
+
+const mapUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+function locHtml(rec){
+  const cities = (rec.city || "").split(/[,;]/).map(x => x.trim()).filter(Boolean);
+  if(!cities.length && !rec.address) return "";
+  const ents = (rec.address || "").split(";").map(x => x.trim()).filter(Boolean).map(x => {
+    const m = /^([^:]{2,30}):\s*(.+)$/.exec(x);
+    if(m && cities.includes(m[1].trim())) return {c:m[1].trim(), t:m[2].trim()};
+    return {c:cities[0] || "", t:x};
+  });
+  const link = (url, txt) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="Відкрити на карті Google">${escapeHtml(txt)}</a>`;
+  const lines = ents.map(e => { const txt = (e.c ? e.c + ", " : "") + e.t; return link(mapUrl(txt), txt); });
+  cities.forEach(c => { if(!ents.some(e => e.c === c)) lines.push(link(mapUrl(rec.displayName + " " + c), c)); });
+  return `<div class="city">${lines.map(l => "📍 " + l).join("<br>")}</div>`;
+}
+
+function matches(rec, terms){
+  for(const f of selectedFlags) if(!isOn(rec[f])) return false;
+  if(selectedTags.size){
+    const have = rec.tagList.map(t => t.toLowerCase());
+    for(const t of selectedTags) if(!have.includes(t)) return false;
+  }
+  return terms.every(t => rec.searchText.includes(t));
+}
+
+function renderActiveFilters(){
+  const wrap = $("activeFilters");
+  if(!selectedTags.size && !selectedFlags.size){ wrap.style.display = "none"; wrap.innerHTML = ""; return; }
+  wrap.style.display = "flex";
+  const pill = (label, attr) => `<span class="filter-pill">${escapeHtml(label)}<button type="button" class="pill-x" ${attr} aria-label="Прибрати фільтр">×</button></span>`;
+  wrap.innerHTML =
+    [...selectedFlags].map(f => pill(FLAG_LABELS[f], `data-flag="${f}"`)).join("") +
+    [...selectedTags].map(t => pill(t, `data-tag="${escapeHtml(t)}"`)).join("") +
+    `<button type="button" class="clear-filters" id="clearFiltersBtn">Скинути фільтри</button>`;
+}
+
+const QUICK_COUNT = 5;
+const QUICK_EXCLUDE = new Set(["продаж"]); // теги, які не показуються кнопками
+/* П'ять найчастіших тегів. Перераховується після кожної синхронізації з таблицею,
+   тож набір кнопок сам слідує за співвідношенням тегів у даних. */
+function renderQuick(){
+  const counts = new Map();
+  RECORDS.forEach(r => r.tagList.forEach(t => {
+    const k = t.toLowerCase(), e = counts.get(k);
+    if(e) e.n++; else counts.set(k, {label:t, n:1});
+  }));
+  const top = [...counts.entries()]
+    .filter(([k]) => !QUICK_EXCLUDE.has(k))
+    .sort((a,b) => b[1].n - a[1].n || a[0].localeCompare(b[0],"uk"))
+    .slice(0, QUICK_COUNT);
+  $("quick").innerHTML = top.map(([k,e]) =>
+    `<button type="button" data-tag="${escapeHtml(e.label)}" class="${selectedTags.has(k) ? "on" : ""}">${escapeHtml(e.label)} <small>${e.n}</small></button>`
+  ).join("");
+}
+
+function saveState(){
+  const p = new URLSearchParams();
+  const q = $("searchInput").value.trim();
+  if(q) p.set("q", q);
+  if(selectedTags.size) p.set("tags", [...selectedTags].join("|"));
+  if(selectedFlags.size) p.set("flags", [...selectedFlags].join("|"));
+  const s = p.toString();
+  try{ history.replaceState(null, "", s ? "#" + s : location.pathname + location.search); }catch(e){}
+}
+function loadState(){
+  const p = new URLSearchParams(location.hash.slice(1));
+  $("searchInput").value = p.get("q") || "";
+  (p.get("tags")||"").split("|").filter(Boolean).slice(0,MAX_TAG_FILTERS).forEach(t => selectedTags.add(t.toLowerCase()));
+  (p.get("flags")||"").split("|").filter(f => FLAG_LABELS[f]).forEach(f => selectedFlags.add(f));
+}
+
+function render(){
+  const q = $("searchInput").value.trim().toLowerCase();
+  const terms = q ? q.split(/\s+/).filter(Boolean).slice(0, MAX_SEARCH_WORDS) : [];
+  let list = RECORDS.filter(r => matches(r, terms));
+
+  // найновіші зверху; записи без дати зберігають порядок таблиці
+  list.sort((a,b) => {
+    if(a.closed !== b.closed) return a.closed ? 1 : -1;   // зачинені завжди внизу
+    const rank = r => isOn(r.recommend) ? 0 : (isOn(r.verified) ? 1 : 2);
+    const fa = rank(a), fb = rank(b);
+    if(fa !== fb) return fa - fb;                          // спершу «рекомендовано», потім «перевірено», далі решта
+    if(a.ts !== null && b.ts !== null) return b.ts - a.ts;
+    if(a.ts !== null) return -1;
+    if(b.ts !== null) return 1;
+    return a.origIndex - b.origIndex;
+  });
+  const pi = list.findIndex(r => r.displayName.trim().toLowerCase() === PIN_NAME.toLowerCase());
+  if(pi > 0) list.unshift(list.splice(pi,1)[0]);
+
+  const filtered = q || selectedTags.size || selectedFlags.size;
+  $("resultsCount").textContent = filtered ? `Знайдено: ${list.length}` : `Показано всі: ${list.length}`;
+  renderActiveFilters();
+  renderQuick();
+  saveState();
+
+  $("grid").innerHTML = list.map(cardHtml).join("");
+  $("emptyState").style.display = list.length ? "none" : "block";
+}
+
+function resetFilters(){
+  selectedTags.clear(); selectedFlags.clear();
+  $("searchInput").value = "";
+  render();
+}
+
+function setSyncStatus(state, text){
+  $("syncDot").className = "sync-dot" + (state === "ok" ? " ok" : state === "err" ? " err" : "");
+  $("syncText").textContent = text;
+}
+
+function applyCsv(text){
+  RECORDS = normalize(rowsToRecords(parseCSV(text)));
+  $("emptyState").innerHTML = EMPTY_DEFAULT;
+  $("totalCount").textContent = RECORDS.length + " записів";
+  render();
+}
+
+async function loadData(){
+  setSyncStatus("", "синхронізація…");
+  try{
+    const ctrl = new AbortController();
+    const to = setTimeout(() => ctrl.abort(), 10000);
+    const res = await fetch(CSV_URL, {signal: ctrl.signal});
+    clearTimeout(to);
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    const text = await res.text();
+    if(parseCSV(text).length < 2) throw new Error("empty");
+    applyCsv(text);
+    try{ localStorage.setItem(CACHE_KEY, JSON.stringify({t:Date.now(), text})); }catch(e){}
+    const lm = res.headers.get("Last-Modified");
+    const when = lm ? new Date(lm) : new Date();
+    setSyncStatus("ok", "дані від " + when.toLocaleTimeString("uk-UA", {hour:"2-digit", minute:"2-digit"}));
+  } catch(e){
+    let used = false;
+    try{
+      const c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
+      if(c && c.text){
+        applyCsv(c.text); used = true;
+        setSyncStatus("err", "збережена копія від " + new Date(c.t).toLocaleString("uk-UA", {day:"2-digit", month:"2-digit", hour:"2-digit", minute:"2-digit"}));
+      }
+    }catch(_){}
+    if(!used){
+      if(!RECORDS.length){
+        $("totalCount").textContent = "0 записів";
+        $("resultsCount").textContent = "";
+        $("grid").innerHTML = "";
+        $("emptyState").style.display = "block";
+        $("emptyState").innerHTML = 'Не вдалося завантажити дані з таблиці. Перевірте з\'єднання і <button type="button" class="clear-filters" id="retryBtn">спробуйте ще раз</button>.';
+      }
+      setSyncStatus("err", "немає з'єднання з таблицею");
+    }
+  }
+}
+
+/* ---------- Лічильник відвідувань (hit.php) ---------- */
+(async function countVisit(){
+  try{
+    const ctrl = new AbortController();
+    const to = setTimeout(() => ctrl.abort(), 6000);
+    const res = await fetch("hit.php", {method:"POST", signal: ctrl.signal, cache:"no-store"});
+    clearTimeout(to);
+    if(!res.ok) return;
+    const d = await res.json();
+    if(typeof d.total !== "number" || d.total <= 0) return;
+    $("visitsTotal").textContent = d.total.toLocaleString("uk-UA");
+    $("visitsToday").textContent = d.today.toLocaleString("uk-UA");
+    $("visits").hidden = false;
+  }catch(e){}
+})();
+
+/* ---------- Події ---------- */
+let searchTimer;
+$("searchInput").addEventListener("input", () => { clearTimeout(searchTimer); searchTimer = setTimeout(render, 120); });
+const EMPTY_DEFAULT = $("emptyState").innerHTML;
+$("emptyState").addEventListener("click", e => {
+  if(e.target.id === "emptyReset") resetFilters();
+  else if(e.target.id === "retryBtn") loadData();
+});
+
+$("quick").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  const tag = (b.dataset.tag || "").toLowerCase(); if(!tag) return;
+  if(selectedTags.has(tag)) selectedTags.delete(tag);
+  else {
+    if(selectedTags.size >= MAX_TAG_FILTERS){
+      b.classList.add("limit-shake");
+      setTimeout(() => b.classList.remove("limit-shake"), 350);
+      return;
+    }
+    selectedTags.add(tag);
+  }
+  render();
+});
+
+$("grid").addEventListener("click", e => {
+  const flagBtn = e.target.closest(".tag-badge");
+  if(flagBtn){
+    const f = flagBtn.dataset.flag;
+    selectedFlags.has(f) ? selectedFlags.delete(f) : selectedFlags.add(f);
+    render(); return;
+  }
+  const chip = e.target.closest(".chip"); if(!chip) return;
+  const tag = (chip.dataset.tag || "").toLowerCase(); if(!tag) return;
+  if(selectedTags.has(tag)) selectedTags.delete(tag);
+  else {
+    if(selectedTags.size >= MAX_TAG_FILTERS){
+      chip.classList.add("limit-shake");
+      setTimeout(() => chip.classList.remove("limit-shake"), 350);
+      return;
+    }
+    selectedTags.add(tag);
+  }
+  render();
+});
+
+$("activeFilters").addEventListener("click", e => {
+  if(e.target.id === "clearFiltersBtn"){ resetFilters(); return; }
+  const btn = e.target.closest(".pill-x"); if(!btn) return;
+  if(btn.dataset.flag) selectedFlags.delete(btn.dataset.flag);
+  else selectedTags.delete(btn.dataset.tag);
+  render();
+});
+
+/* Тема: авто → темна → світла */
+(function(){
+  const root = document.documentElement;
+  try{ const t = localStorage.getItem("vinyl-theme"); if(t) root.dataset.theme = t; }catch(e){}
+  $("themeBtn").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark"
+      : matchMedia("(prefers-color-scheme: dark)").matches;
+    const next = dark ? "light" : "dark";
+    root.dataset.theme = next;
+    try{ localStorage.setItem("vinyl-theme", next); }catch(e){}
+  });
+})();
+
+/* Шапка ховається при скролі вниз (мобільні), кнопка «нагору» */
+(function(){
+  const header = document.querySelector("header"), top = $("toTop");
+  let lastY = scrollY, ticking = false;
+  addEventListener("scroll", () => {
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const y = scrollY;
+      if(y <= 60) header.classList.remove("header-hidden");
+      else if(y > lastY) header.classList.add("header-hidden");
+      else if(y < lastY) header.classList.remove("header-hidden");
+      top.classList.toggle("show", y > 600);
+      lastY = y; ticking = false;
+    });
+  }, {passive:true});
+  top.addEventListener("click", () => scrollTo({top:0}));
+})();
+
+loadState();
+loadData();
+setInterval(() => { if(!document.hidden) loadData(); }, 10 * 60 * 1000);
+document.addEventListener("visibilitychange", () => { if(!document.hidden) loadData(); });
+</script>
+</body>
+</html>
