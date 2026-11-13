@@ -1,5 +1,5 @@
 {
- "generated": "13.11.2026 16:48",
+ "generated": "13.11.2026 18:45",
  "orders": [
   {
    "number": 44,
@@ -110,16 +110,6 @@
    "status": "Звернення",
    "eta": "",
    "updated": "02.11.2026"
-  },
-  {
-   "number": 17,
-   "date": "26.10.2026",
-   "type": "програвач",
-   "brand": "Technics",
-   "model": "SL-QD33",
-   "status": "Діагностика",
-   "eta": "",
-   "updated": "29.10.2026"
   },
   {
    "number": 22,
