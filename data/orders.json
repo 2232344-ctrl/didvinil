@@ -1,0 +1,185 @@
+{
+ "generated": "13.11.2026 14:11",
+ "orders": [
+  {
+   "number": 44,
+   "date": "12.11.2026",
+   "type": "програвач",
+   "brand": "Lenco",
+   "model": "LSA-071SI",
+   "status": "Скасовано",
+   "updated": "12.11.2026"
+  },
+  {
+   "number": 43,
+   "date": "12.11.2026",
+   "type": "програвач",
+   "brand": "Dual",
+   "model": "1239",
+   "status": "Доставка клієнту",
+   "updated": "12.11.2026"
+  },
+  {
+   "number": 40,
+   "date": "11.11.2026",
+   "type": "програвач",
+   "brand": "Yamaha",
+   "model": "GT-750",
+   "status": "Прийнято в роботу",
+   "updated": "11.11.2026"
+  },
+  {
+   "number": 10,
+   "date": "11.11.2026",
+   "type": "програвач",
+   "brand": "Audio-Technica",
+   "model": "AT-LP60XBT",
+   "status": "Прийнято в роботу",
+   "updated": "11.11.2026"
+  },
+  {
+   "number": 39,
+   "date": "10.11.2026",
+   "type": "програвач",
+   "brand": "Pro-Ject",
+   "model": "T1 BT OM5e Piano",
+   "status": "Звернення",
+   "updated": "10.11.2026"
+  },
+  {
+   "number": 33,
+   "date": "02.11.2026",
+   "type": "програвач",
+   "brand": "Dual",
+   "model": "CS 1246",
+   "status": "Скасовано",
+   "updated": "10.11.2026"
+  },
+  {
+   "number": 38,
+   "date": "09.11.2026",
+   "type": "програвач",
+   "brand": "Technics",
+   "model": "SL-1500CEE-K",
+   "status": "Замовлено запчастини",
+   "updated": "09.11.2026"
+  },
+  {
+   "number": 37,
+   "date": "09.11.2026",
+   "type": "програвач",
+   "brand": "Pro-Ject",
+   "model": "Debut Pro B",
+   "status": "Замовлено запчастини",
+   "updated": "09.11.2026"
+  },
+  {
+   "number": 32,
+   "date": "02.11.2026",
+   "type": "програвач",
+   "brand": "Denver",
+   "model": "VPL-120B",
+   "status": "Скасовано",
+   "updated": "09.11.2026"
+  },
+  {
+   "number": 28,
+   "date": "31.10.2026",
+   "type": "програвач",
+   "brand": "Crosley",
+   "model": "CR8005F-BU",
+   "status": "Скасовано",
+   "updated": "09.11.2026"
+  },
+  {
+   "number": 25,
+   "date": "07.11.2026",
+   "type": "програвач",
+   "brand": "Audio-Technica",
+   "model": "AT-LP60X",
+   "status": "Доставка клієнту",
+   "updated": "08.11.2026"
+  },
+  {
+   "number": 35,
+   "date": "04.11.2026",
+   "type": "програвач",
+   "brand": "TEAM",
+   "model": "6010 P",
+   "status": "Прийнято в роботу",
+   "updated": "04.11.2026"
+  },
+  {
+   "number": 34,
+   "date": "03.11.2026",
+   "type": "ресивер",
+   "brand": "Optonica",
+   "model": "SA-3131H",
+   "status": "Прийнято в роботу",
+   "updated": "03.11.2026"
+  },
+  {
+   "number": 30,
+   "date": "02.11.2026",
+   "type": "комбайн",
+   "brand": "Telefunken",
+   "model": "4525",
+   "status": "Звернення",
+   "updated": "02.11.2026"
+  },
+  {
+   "number": 17,
+   "date": "26.10.2026",
+   "type": "програвач",
+   "brand": "Technics",
+   "model": "SL-QD33",
+   "status": "Діагностика",
+   "updated": "29.10.2026"
+  },
+  {
+   "number": 24,
+   "date": "28.10.2026",
+   "type": "чемоданчик",
+   "brand": "Crosley",
+   "model": "",
+   "status": "Звернення",
+   "updated": "28.10.2026"
+  },
+  {
+   "number": 22,
+   "date": "27.10.2026",
+   "type": "програвач",
+   "brand": "Crosley",
+   "model": "CR6231D-GR4",
+   "status": "Узгодження",
+   "updated": "27.10.2026"
+  },
+  {
+   "number": 19,
+   "date": "26.10.2026",
+   "type": "підсилювач",
+   "brand": "Yamaha",
+   "model": "A-1000",
+   "status": "Узгодження",
+   "updated": "26.10.2026"
+  },
+  {
+   "number": 16,
+   "date": "26.10.2026",
+   "type": "програвач",
+   "brand": "CEC",
+   "model": "BD 2000",
+   "status": "Узгодження",
+   "updated": "26.10.2026"
+  },
+  {
+   "number": 2,
+   "date": "24.10.2026",
+   "type": "підсилювач",
+   "brand": "Technics",
+   "model": "SU-8055",
+   "status": "Прийнято в роботу",
+   "updated": "24.10.2026"
+  }
+ ]
+}
