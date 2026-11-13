@@ -1,0 +1,6 @@
+# VINYL UKRAINE: адреси SEO-сторінок
+RewriteEngine On
+RewriteRule ^vinil/([a-z-]+)/?$ city.php?c=$1 [L,QSA]
+RewriteRule ^katalog/([a-z0-9-]+)/?$ category.php?k=$1 [L,QSA]
+RewriteRule ^katalog/([a-z0-9-]+)/([a-z-]+)/?$ category.php?k=$1&c=$2 [L,QSA]
+RewriteRule ^sitemap/?$ sitemap.php [L]

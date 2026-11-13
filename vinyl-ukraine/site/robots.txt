@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /hit.php
+Sitemap: https://vinil.in.ua/sitemap/
