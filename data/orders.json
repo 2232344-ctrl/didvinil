@@ -1,5 +1,5 @@
 {
- "generated": "13.11.2026 16:46",
+ "generated": "13.11.2026 16:48",
  "orders": [
   {
    "number": 44,
@@ -8,16 +8,6 @@
    "brand": "Lenco",
    "model": "LSA-071SI",
    "status": "Скасовано",
-   "eta": "",
-   "updated": "12.11.2026"
-  },
-  {
-   "number": 43,
-   "date": "12.11.2026",
-   "type": "програвач",
-   "brand": "Dual",
-   "model": "1239",
-   "status": "Доставка клієнту",
    "eta": "",
    "updated": "12.11.2026"
   },
@@ -90,16 +80,6 @@
    "status": "Скасовано",
    "eta": "",
    "updated": "09.11.2026"
-  },
-  {
-   "number": 25,
-   "date": "07.11.2026",
-   "type": "програвач",
-   "brand": "Audio-Technica",
-   "model": "AT-LP60X",
-   "status": "Доставка клієнту",
-   "eta": "",
-   "updated": "08.11.2026"
   },
   {
    "number": 35,
