@@ -1,16 +1,6 @@
 {
- "generated": "14.11.2026 15:38",
+ "generated": "14.11.2026 18:38",
  "orders": [
-  {
-   "number": 46,
-   "date": "14.11.2026",
-   "type": "підсилювач",
-   "brand": "Dual",
-   "model": "KA 230",
-   "status": "Скасовано",
-   "eta": "",
-   "updated": "14.11.2026"
-  },
   {
    "number": 45,
    "date": "14.11.2026",
@@ -18,6 +8,16 @@
    "brand": "Pioneer",
    "model": "PL-5L",
    "status": "Звернення",
+   "eta": "",
+   "updated": "14.11.2026"
+  },
+  {
+   "number": 38,
+   "date": "09.11.2026",
+   "type": "програвач",
+   "brand": "Technics",
+   "model": "SL-1500CEE-K",
+   "status": "Ремонт",
    "eta": "",
    "updated": "14.11.2026"
   },
@@ -70,16 +70,6 @@
    "status": "Скасовано",
    "eta": "",
    "updated": "10.11.2026"
-  },
-  {
-   "number": 38,
-   "date": "09.11.2026",
-   "type": "програвач",
-   "brand": "Technics",
-   "model": "SL-1500CEE-K",
-   "status": "Замовлено запчастини",
-   "eta": "",
-   "updated": "09.11.2026"
   },
   {
    "number": 37,
