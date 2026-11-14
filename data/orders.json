@@ -1,6 +1,16 @@
 {
- "generated": "13.11.2026 18:45",
+ "generated": "14.11.2026 11:38",
  "orders": [
+  {
+   "number": 45,
+   "date": "14.11.2026",
+   "type": "програвач",
+   "brand": "Pioneer",
+   "model": "PL-5L",
+   "status": "Звернення",
+   "eta": "",
+   "updated": "14.11.2026"
+  },
   {
    "number": 44,
    "date": "12.11.2026",
