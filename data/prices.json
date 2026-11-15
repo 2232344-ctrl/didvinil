@@ -1,0 +1,15 @@
+{
+ "generated": "15.11.2026 14:50",
+ "rate": 45.3849,
+ "rate_date": "2026-11-13",
+ "uah": {
+  "diag": 600,
+  "maint": 800,
+  "repair": 1200
+ },
+ "usd": {
+  "diag": 56,
+  "maint": 72,
+  "repair": 108
+ }
+}
