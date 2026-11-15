@@ -227,7 +227,7 @@ function parseCSV(text){
 const HEADER_MAP = {
   "позначка часу":"timestamp","timestamp":"timestamp",
   "рекомендація":"recommend","рекомендую":"recommend","рекомендовано":"recommend",
-  "перевірено":"verified","перевірений":"verified","проверено":"verified",
+  "дата останньої публікації в instagram":"igpub","перевірено":"verified","перевірений":"verified","проверено":"verified",
   "знижка":"discount","скидка":"discount","discount":"discount",
   "назва/імя":"name","назва/ім'я":"name","назва":"name",
   "пропозиції":"tags",
@@ -397,6 +397,10 @@ function normalize(records){
       const um = (r.comment||"").match(/Оновлено\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/i);
       const upd = um ? new Date(+um[3], +um[2]-1, +um[1], 23, 59, 59).getTime() : null;
       r.ts = parseTimestamp(r.timestamp);
+      // дата публікації картки в Instagram теж піднімає її вгору
+      const pm = (r.igpub||"").match(/(\d{1,2})\.(\d{1,2})\.(\d{4})/);
+      const pub = pm ? new Date(+pm[3], +pm[2]-1, +pm[1], 23, 59, 59).getTime() : null;
+      if(pub !== null && !isNaN(pub) && (r.ts === null || pub > r.ts)) r.ts = pub;
       if(upd !== null && !isNaN(upd) && (r.ts === null || upd > r.ts)) r.ts = upd;
       r.closed = r.tagList.some(t => t === "зачинено" || t === "закрито");
       r.origIndex = idx;

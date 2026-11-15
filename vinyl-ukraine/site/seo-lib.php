@@ -29,7 +29,7 @@ function load_csv(){
     'discount'=>['знижка','скидка','discount'],'name'=>['назва/ім\'я','назва/імя','назва','назва/ім’я'],'tags'=>['пропозиції'],
     'website'=>['website'],'telegram'=>['telegram'],'instagram'=>['instagram'],'threads'=>['threads'],'facebook'=>['facebook'],
     'city'=>['місто'],'address'=>['адреса'],'phone'=>['телефон'],'comment'=>['коментар'],'viber'=>['viber'],'whatsapp'=>['whatsapp'],
-    'email'=>['e-mail','email'],'discord'=>['discord'],'tiktok'=>['tiktok'],'youtube'=>['youtube'],'pinterest'=>['pinterest']];
+    'email'=>['e-mail','email'],'igpub'=>['дата останньої публікації в instagram'],'discord'=>['discord'],'tiktok'=>['tiktok'],'youtube'=>['youtube'],'pinterest'=>['pinterest']];
   $rev = []; foreach ($map as $k=>$names) foreach ($names as $n) $rev[$n] = $k;
   $hdr = array_map(fn($x)=>mb_strtolower(trim($x)), array_shift($rows));
   $keys = []; foreach ($hdr as $i=>$x) $keys[$i] = ($x===''&&$i===0) ? 'timestamp' : ($rev[$x] ?? null);
@@ -57,6 +57,7 @@ function ts_of($rec){
   $t = 0;
   if (preg_match('/^(\d{1,2})\.(\d{1,2})\.(\d{4})/', $rec['timestamp'], $m)) $t = mktime(0,0,0,(int)$m[2],(int)$m[1],(int)$m[3]);
   if (preg_match('/Оновлено\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/u', $rec['comment'], $m)) $t = max($t, mktime(23,59,59,(int)$m[2],(int)$m[1],(int)$m[3]));
+  if (preg_match('/(\d{1,2})\.(\d{1,2})\.(\d{4})/', $rec['igpub'] ?? '', $m)) $t = max($t, mktime(23,59,59,(int)$m[2],(int)$m[1],(int)$m[3]));
   return $t;
 }
 function map_url($q){ return 'https://www.google.com/maps/search/?api=1&query='.rawurlencode($q); }
