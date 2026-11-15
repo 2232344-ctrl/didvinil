@@ -1,5 +1,5 @@
 {
- "generated": "15.11.2026 12:38",
+ "generated": "15.11.2026 15:38",
  "orders": [
   {
    "number": 45,
@@ -17,7 +17,7 @@
    "type": "програвач",
    "brand": "Audio-Technica",
    "model": "AT-LP60XBT",
-   "status": "Ремонт",
+   "status": "Доставка клієнту",
    "eta": "",
    "updated": "15.11.2026"
   },
