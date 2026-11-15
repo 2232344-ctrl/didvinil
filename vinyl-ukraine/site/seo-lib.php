@@ -165,7 +165,7 @@ function cat_rows($rows, $slug, $city=''){
 }
 function sort_rows(&$list){
   usort($list, function($a,$b){
-    $d0 = strtotime('today'); $fa = ts_of($a)>=$d0; $fb = ts_of($b)>=$d0;
+    $d0 = strtotime('today -2 days'); /* FRESH_DAYS = 3 */ $fa = ts_of($a)>=$d0; $fb = ts_of($b)>=$d0;
     if ($fa !== $fb) return $fa ? -1 : 1;
     $ra = $fa?0:(is_on($a['recommend'])?0:(is_on($a['verified'])?1:2)); $rb = $fb?0:(is_on($b['recommend'])?0:(is_on($b['verified'])?1:2));
     return $ra<=>$rb ?: ts_of($b)<=>ts_of($a);

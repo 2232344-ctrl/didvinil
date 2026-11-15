@@ -426,6 +426,7 @@ const $ = id => document.getElementById(id);
 let RECORDS = [];
 const selectedTags = new Set();
 const selectedFlags = new Set();
+const FRESH_DAYS = 3;  // скільки днів змінена картка тримається нагорі
 const FLAG_LABELS = {recommend:"рекомендовано", verified:"перевірено"};
 
 function discountText(d){
@@ -541,8 +542,8 @@ function render(){
   // найновіші зверху; записи без дати зберігають порядок таблиці
   list.sort((a,b) => {
     if(a.closed !== b.closed) return a.closed ? 1 : -1;   // зачинені завжди внизу
-    const d0 = new Date(); d0.setHours(0,0,0,0); const dayStart = d0.getTime();
-    const fresh = r => r.ts !== null && r.ts >= dayStart;  // оновлена/опублікована сьогодні: на добу вгору, незалежно від «рекомендовано»/«перевірено»
+    const d0 = new Date(); d0.setHours(0,0,0,0); d0.setDate(d0.getDate()-(FRESH_DAYS-1)); const dayStart = d0.getTime();
+    const fresh = r => r.ts !== null && r.ts >= dayStart;  // оновлена/опублікована за останні FRESH_DAYS днів: вгору, незалежно від «рекомендовано»/«перевірено»
     if(fresh(a) !== fresh(b)) return fresh(a) ? -1 : 1;
     const rank = r => fresh(r) ? 0 : (isOn(r.recommend) ? 0 : (isOn(r.verified) ? 1 : 2));
     const fa = rank(a), fb = rank(b);
