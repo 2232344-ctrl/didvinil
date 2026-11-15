@@ -534,6 +534,13 @@ function loadState(){
   (p.get("flags")||"").split("|").filter(f => FLAG_LABELS[f]).forEach(f => selectedFlags.add(f));
 }
 
+/* Щоденне «перемішування»: порядок стабільний протягом доби, змінюється з новою датою */
+function dayHash(r){
+  const str = (d=>d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate())(new Date()) + "|" + (r.displayName||r.name||"");
+  let h = 2166136261;
+  for(let i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; }
+  return h;
+}
 function render(){
   const q = $("searchInput").value.trim().toLowerCase();
   const terms = q ? q.split(/\s+/).filter(Boolean).slice(0, MAX_SEARCH_WORDS) : [];
@@ -548,6 +555,7 @@ function render(){
     const rank = r => fresh(r) ? 0 : (isOn(r.recommend) ? 0 : (isOn(r.verified) ? 1 : 2));
     const fa = rank(a), fb = rank(b);
     if(fa !== fb) return fa - fb;                          // спершу «рекомендовано», потім «перевірено», далі решта
+    if(fa === 0 && !fresh(a) && !fresh(b)) return dayHash(a) - dayHash(b) || a.origIndex - b.origIndex;  // «рекомендовано»: щодня випадковий порядок
     if(a.ts !== null && b.ts !== null) return b.ts - a.ts;
     if(a.ts !== null) return -1;
     if(b.ts !== null) return 1;

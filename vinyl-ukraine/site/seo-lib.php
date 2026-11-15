@@ -168,9 +168,12 @@ function sort_rows(&$list){
     $d0 = strtotime('today -2 days'); /* FRESH_DAYS = 3 */ $fa = ts_of($a)>=$d0; $fb = ts_of($b)>=$d0;
     if ($fa !== $fb) return $fa ? -1 : 1;
     $ra = $fa?0:(is_on($a['recommend'])?0:(is_on($a['verified'])?1:2)); $rb = $fb?0:(is_on($b['recommend'])?0:(is_on($b['verified'])?1:2));
-    return $ra<=>$rb ?: ts_of($b)<=>ts_of($a);
+    if ($ra !== $rb) return $ra<=>$rb;
+    if ($ra === 0 && !$fa && !$fb) return day_hash($a)<=>day_hash($b);  // рекомендовані: щодня випадковий порядок
+    return ts_of($b)<=>ts_of($a);
   });
 }
+function day_hash($r){ return crc32(date('Y-m-d').'|'.($r['name'] ?? '')); }
 function city_counts($rows){ $c=[]; foreach ($rows as $r) foreach (split_cities($r['city']) as $x) $c[$x]=($c[$x]??0)+1; return $c; }
 
 /* Єдиний шаблон SEO-сторінки. $o: title, desc, url, ld, crumbs(html), h2, intro(html), updated, groups[[label,[[href,text,count,on],...]]], list, city, more(html) */
