@@ -555,7 +555,7 @@ function render(){
     const rank = r => fresh(r) ? 0 : (isOn(r.recommend) ? 0 : (isOn(r.verified) ? 1 : 2));
     const fa = rank(a), fb = rank(b);
     if(fa !== fb) return fa - fb;                          // спершу «рекомендовано», потім «перевірено», далі решта
-    if(fa === 0 && !fresh(a) && !fresh(b)) return dayHash(a) - dayHash(b) || a.origIndex - b.origIndex;  // «рекомендовано»: щодня випадковий порядок
+    if(fa < 2 && !fresh(a) && !fresh(b)) return dayHash(a) - dayHash(b) || a.origIndex - b.origIndex;  // «рекомендовано» і «перевірено»: щодня випадковий порядок усередині групи
     if(a.ts !== null && b.ts !== null) return b.ts - a.ts;
     if(a.ts !== null) return -1;
     if(b.ts !== null) return 1;

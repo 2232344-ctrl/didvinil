@@ -169,7 +169,7 @@ function sort_rows(&$list){
     if ($fa !== $fb) return $fa ? -1 : 1;
     $ra = $fa?0:(is_on($a['recommend'])?0:(is_on($a['verified'])?1:2)); $rb = $fb?0:(is_on($b['recommend'])?0:(is_on($b['verified'])?1:2));
     if ($ra !== $rb) return $ra<=>$rb;
-    if ($ra === 0 && !$fa && !$fb) return day_hash($a)<=>day_hash($b);  // рекомендовані: щодня випадковий порядок
+    if ($ra < 2 && !$fa && !$fb) return day_hash($a)<=>day_hash($b);  // рекомендовані: щодня випадковий порядок
     return ts_of($b)<=>ts_of($a);
   });
 }
