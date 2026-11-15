@@ -1,14 +1,15 @@
 <?php
 /**
  * VINYL UKRAINE — головна сторінка з серверним рендером.
- * Бере index.html (дизайн і JS без змін) і одразу вставляє в нього всі картки,
+ * Бере page.html (дизайн і JS без змін; раніше index.html) і одразу вставляє в нього всі картки,
  * щоб пошуковики й AI-боти бачили каталог без виконання JavaScript.
  * Після завантаження JS, як і раніше, перемальовує список (пошук, фільтри).
  */
 require __DIR__.'/seo-lib.php';
 
-$html = @file_get_contents(__DIR__.'/index.html');
-if ($html === false) { http_response_code(500); exit('index.html not found'); }
+$tpl = is_file(__DIR__.'/page.html') ? '/page.html' : '/index.html'; // page.html: щоб /index.html не віддавався сервером напряму
+$html = @file_get_contents(__DIR__.$tpl);
+if ($html === false) { http_response_code(500); exit('page.html not found'); }
 
 try { $rows = active_rows(); } catch (Throwable $e) { $rows = []; }
 
