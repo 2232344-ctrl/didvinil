@@ -209,7 +209,7 @@ function render_page($o){
       <h1><a href="/" style="color:inherit;text-decoration:none">VINYL <span>UKRAINE</span></a></h1>
       <div class="top-actions">
         <button class="iconbtn" id="themeBtn" type="button" aria-label="Змінити тему" title="Тема">◐</button>
-        <a class="addbtn" href="https://docs.google.com/forms/d/1Ch0VdB88GLL0KL8flPXCxhkavUXXy0gpCD1Q-sTQX4Y/viewform" target="_blank" rel="noopener">＋ Доповнити</a>
+        <a class="addbtn" href="mailto:vinyl.help.kiev@gmail.com?subject=%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%B8%20%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%20%D1%83%20VINYL%20UKRAINE&body=%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%3A%0A%D0%9C%D1%96%D1%81%D1%82%D0%BE%20%D1%82%D0%B0%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0%3A%0A%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%3A%0A%D0%A1%D0%B0%D0%B9%D1%82%3A%0AInstagram%20/%20Telegram%20/%20Facebook%3A%0A%D0%A9%D0%BE%20%D0%BF%D1%80%D0%BE%D0%BF%D0%BE%D0%BD%D1%83%D1%8E%D1%82%D1%8C%20%28%D0%BF%D0%BB%D0%B0%D1%82%D1%96%D0%B2%D0%BA%D0%B8%2C%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%B2%D0%B0%D1%87%D1%96%2C%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%E2%80%A6%29%3A%0A">＋ Доповнити</a>
       </div>
     </div>
   </div>
