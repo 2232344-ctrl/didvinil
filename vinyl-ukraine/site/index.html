@@ -541,7 +541,10 @@ function render(){
   // найновіші зверху; записи без дати зберігають порядок таблиці
   list.sort((a,b) => {
     if(a.closed !== b.closed) return a.closed ? 1 : -1;   // зачинені завжди внизу
-    const rank = r => isOn(r.recommend) ? 0 : (isOn(r.verified) ? 1 : 2);
+    const d0 = new Date(); d0.setHours(0,0,0,0); const dayStart = d0.getTime();
+    const fresh = r => r.ts !== null && r.ts >= dayStart;  // оновлена/опублікована сьогодні: на добу вгору, незалежно від «рекомендовано»/«перевірено»
+    if(fresh(a) !== fresh(b)) return fresh(a) ? -1 : 1;
+    const rank = r => fresh(r) ? 0 : (isOn(r.recommend) ? 0 : (isOn(r.verified) ? 1 : 2));
     const fa = rank(a), fb = rank(b);
     if(fa !== fb) return fa - fb;                          // спершу «рекомендовано», потім «перевірено», далі решта
     if(a.ts !== null && b.ts !== null) return b.ts - a.ts;
