@@ -1,5 +1,271 @@
-User-agent: *
+# Дозволено всім ботам (включно з тими, що заблоковані блоком хостингу).
+# Для кожного бота Allow: / перекриває Disallow: / з блоку хостингу (при рівній довжині правил діє Allow).
+User-agent: SemrushBot
+User-agent: MegaIndex.ru
+User-agent: dotbot
+User-agent: VelenPublicWebCrawler
+User-agent: netEstate NE Crawler
+User-agent: SEOkicks-Robot
+User-agent: 7Siters
+User-agent: SeekportBot
+User-agent: SerpstatBot
+User-agent: panscient.com
+User-agent: ZoominfoBot
+User-agent: AwarioSmartBot
+User-agent: NetpeakSpiderBot
+User-agent: GetIntent Crawler
+User-agent: ApacheBench
+User-agent: AhrefsBot
+User-agent: MJ12bot
+User-agent: Amazonbot
+User-agent: 008
+User-agent: JDatabaseDriverMysqli
+User-agent: libwww-perl
+User-agent: coccocbot-web
+User-agent: CareerBot
+User-agent: BLEXBot
+User-agent: magpie-crawler
+User-agent: DomainCrawler
+User-agent: Exabot
+User-agent: DataForSeoBot
+User-agent: PetalBot
+User-agent: SeopultContentAnalyzer
+User-agent: CCBot
+User-agent: NetcraftSurveyAgent
+User-agent: Weborama
+User-agent: AwarioBot
+User-agent: Keys-so-bot
+User-agent: BuiltWith
+User-agent: Screaming Frog SEO Spider
+User-agent: KOCMOHABT
+User-agent: Bytespider
+User-agent: ClaudeBot
+User-agent: Barkrowler
+User-agent: Mail.RU_Bot
+User-agent: ChatGPT-User
+User-agent: CensysInspect
+User-agent: CriteoBot
+User-agent: IAS crawler
+User-agent: trendictionbot
+User-agent: Sogou web spider
+User-agent: fasthttp
+User-agent: ImagesiftBot
+User-agent: meta-externalagent
+User-agent: OAI-SearchBot
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: Applebot
+User-agent: PerplexityBot
+User-agent: CollaboratorBot
+User-agent: Pinterestbot
+User-agent: MistralAI-User
+User-agent: Yeti
+User-agent: 360Monitoring
+User-agent: AASA-Bot
+User-agent: Monsidobot
+User-agent: ActiveComply Bot
+User-agent: AdagioBot
+User-agent: AdsTxtCrawler
+User-agent: Arquivo-web-crawler
+User-agent: BazQux
+User-agent: bnf.fr_bot
+User-agent: Blogtrottr
+User-agent: BlogVault
+User-agent: Bluesky Cardyb
+User-agent: Bravebot
+User-agent: BrightEdgeBot
+User-agent: BufferBot
+User-agent: Bushbaby
+User-agent: ToutiaoSpider
+User-agent: Catchpoint
+User-agent: Channel3Bot
+User-agent: checkly
+User-agent: CloudflareCrawler
+User-agent: Cloudflare Custom Hostname Verification
+User-agent: Cloudflare-SSLDetector
+User-agent: Cloudflare-Traffic-Manager
+User-agent: ContentKing
+User-agent: ContextualBot
+User-agent: Cookiebot
+User-agent: CookieYesBot
+User-agent: Cotoyogi
+User-agent: Critical CSS Bot
+User-agent: cron-job.org
+User-agent: SyntheticBot
+User-agent: Dataprovider.com
+User-agent: Daum
+User-agent: DeadLinkChecker
+User-agent: DeepCrawl
+User-agent: Detectify
+User-agent: Mediatoolkitbot
+User-agent: Devin
+User-agent: Dotcom-Monitor Bot
+User-agent: LeikiBot
+User-agent: DuckAssistBot
+User-agent: FastmailBot
+User-agent: Feedbin
+User-agent: Feeder.co
+User-agent: Feedly
+User-agent: FIT Feeds Fetcher
+User-agent: FlipboardProxy
+User-agent: FlipboardRSS
+User-agent: Foregenix-WebScan
+User-agent: FreshpingBot
+User-agent: FullStory
+User-agent: GhostInspector
+User-agent: Google-AdWords-Express
+User-agent: Google-Adwords-Instant
+User-agent: Google-CloudVertexBot
+User-agent: Google-Association-Service
+User-agent: Google-NotebookLM
+User-agent: GoogleProducer
+User-agent: Google-Trust-Services
+User-agent: Google-Structured-Data-Testing-Tool
+User-agent: Google-Display-Ads-Bot
+User-agent: GrafanaSyntheticMonitoringBot
+User-agent: GTmetrix
+User-agent: Hatena::Bookmark
+User-agent: HEY Email Privacy Proxy
+User-agent: HostTracker
+User-agent: Hotjar
+User-agent: Google-HSTS
+User-agent: HubSpot Crawler
+User-agent: HypeMachine
+User-agent: IbouBot
+User-agent: ICC-Crawler
+User-agent: Iframely
+User-agent: IndeedJobBot
+User-agent: Innguma Fetcher
+User-agent: Instapaper
+User-agent: archive.org_bot
+User-agent: InternetArchiveBot
+User-agent: jetmon
+User-agent: kb.dk_bot
+User-agent: KinstaBot
+User-agent: Klaviyo
+User-agent: heritrix
+User-agent: LinerBot
+User-agent: LinkChecker
+User-agent: LinkTiger
+User-agent: MainWP
+User-agent: Make
+User-agent: ManageWP
+User-agent: MarginaliaSearch
+User-agent: marketgoo-bot
+User-agent: MavifindsBot
+User-agent: MediaMonitoringBot
+User-agent: MediaboardBot
+User-agent: Medialogia Bot
+User-agent: Mediavine Metadata Parser
+User-agent: meta-externalads
+User-agent: Meta-ExternalFetcher
+User-agent: ModularDS
+User-agent: MojeekBot
+User-agent: MuckRackBot
+User-agent: ClearscopeBot
+User-agent: Nava Labs ASP (Dev)
+User-agent: NewsBlur
+User-agent: NewsNow
+User-agent: NitroBot
+User-agent: Novellum AI Crawl
+User-agent: Outbrain
+User-agent: Overcast
+User-agent: OzonWebGrabber
+User-agent: Paddle
+User-agent: Pingdom.com_bot_version_1.4
+User-agent: Pocket Casts Feed Parser
+User-agent: Prerender
+User-agent: PressEngineBot
+User-agent: PrintFriendly
+User-agent: Protopage
+User-agent: proximic
+User-agent: Quantcastbot
+User-agent: rogerbot
+User-agent: RSSAPI
+User-agent: Salesforce
+User-agent: Sansec Security Monitor
+User-agent: Scour RSS Bot
+User-agent: SE Ranking Bot
+User-agent: SeobilityBot
+User-agent: SERankingBacklinksBot
+User-agent: SeznamBot
+User-agent: ShapBot
+User-agent: SilktideBot
+User-agent: SolarWinds Observability
+User-agent: Sucuri
+User-agent: TaboolaBot
+User-agent: Terracotta
+User-agent: TTD-Content
+User-agent: TurnitinBot
+User-agent: ZoteroTranslationServer
+User-agent: WorldlineBot
+User-agent: Y!J-BRW
+User-agent: Yahoo Ad monitoring
+User-agent: YouBot
+User-agent: vert.x
+User-agent: TikTokSpider
+User-agent: BaseLinker
+User-agent: PagePeeker.com
+User-agent: QUIC.cloud Bot
+User-agent: OAI-AdsBot
+User-agent: EvaMerchantBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: facebookcatalog
+User-agent: cohere-ai
+User-agent: Perplexity-User
+User-agent: MicrosoftPreview
+User-agent: BingVideoPreview
+User-agent: Amazon-SearchBot
+User-agent: Amazon-User
+User-agent: AhrefsSiteAudit
+User-agent: Amazon QuickSight
+User-agent: YisouSpider
+User-agent: MistralAI-Index
+User-agent: MistralAI-Bot
+User-agent: ReflectionBot
+User-agent: SofyaBot
+User-agent: HeadlessChrome
+User-agent: KeenableBot
+User-agent: ApcosysBot
+User-agent: YTMeta
+User-agent: AionBot
+User-agent: MochiImageCrawler
+User-agent: tphotobot
+User-agent: QlyzeBot
+User-agent: ModatScanner
+User-agent: RetroDocumentResearch
+User-agent: BarrigazBot
+User-agent: ArnorBot
+User-agent: TflowSitemapBot
+User-agent: Alibaba.Security.Heimdall
+User-agent: KakaoBot
+User-agent: MiniBrainBot
+User-agent: ExaSearchBot
+User-agent: ElevenLabsCrawler
+User-agent: DomainIntelligence
+User-agent: WordVisBot
+User-agent: LeadsprigBot
+User-agent: LyrenthBot
+User-agent: BlackoutMapBot
+User-agent: ClueWeb-Crawler
+User-agent: snapscout-benchmark
+User-agent: ibou-search
+User-agent: RiverBot
+User-agent: Epochal-Search
+User-agent: PipericBot
+User-agent: AntiCloneBot
+User-agent: FontScanBot
+User-agent: WidesykerBot
+User-agent: Tern
+User-agent: img2dataset
+User-agent: AmazonProductDiscovery
+User-agent: GPTBot
+User-agent: Google-Extended
 Allow: /
 Disallow: /hit.php
 
+User-agent: *
+Allow: /
+Disallow: /hit.php
 Sitemap: https://vinil.in.ua/sitemap/
