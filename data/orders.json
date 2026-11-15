@@ -1,15 +1,25 @@
 {
- "generated": "14.11.2026 18:38",
+ "generated": "15.11.2026 12:38",
  "orders": [
   {
    "number": 45,
-   "date": "14.11.2026",
+   "date": "15.11.2026",
    "type": "програвач",
    "brand": "Pioneer",
    "model": "PL-5L",
-   "status": "Звернення",
+   "status": "Прийнято в роботу",
    "eta": "",
-   "updated": "14.11.2026"
+   "updated": "15.11.2026"
+  },
+  {
+   "number": 10,
+   "date": "11.11.2026",
+   "type": "програвач",
+   "brand": "Audio-Technica",
+   "model": "AT-LP60XBT",
+   "status": "Ремонт",
+   "eta": "",
+   "updated": "15.11.2026"
   },
   {
    "number": 38,
@@ -18,16 +28,6 @@
    "brand": "Technics",
    "model": "SL-1500CEE-K",
    "status": "Ремонт",
-   "eta": "",
-   "updated": "14.11.2026"
-  },
-  {
-   "number": 10,
-   "date": "11.11.2026",
-   "type": "програвач",
-   "brand": "Audio-Technica",
-   "model": "AT-LP60XBT",
-   "status": "Діагностика",
    "eta": "",
    "updated": "14.11.2026"
   },
