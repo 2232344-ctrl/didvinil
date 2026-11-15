@@ -1,5 +1,12 @@
-# VINYL UKRAINE: адреси SEO-сторінок
+# VINYL UKRAINE
+DirectoryIndex index.php index.html
+
 RewriteEngine On
+# /index.html та /index.php -> / (одна адреса головної для пошуковиків)
+RewriteCond %{THE_REQUEST} \s/index\.(html|php)[\s?] [NC]
+RewriteRule ^index\.(html|php)$ / [R=301,L]
+
+# адреси SEO-сторінок
 RewriteRule ^vinil/([a-z-]+)/?$ city.php?c=$1 [L,QSA]
 RewriteRule ^katalog/([a-z0-9-]+)/?$ category.php?k=$1 [L,QSA]
 RewriteRule ^katalog/([a-z0-9-]+)/([a-z-]+)/?$ category.php?k=$1&c=$2 [L,QSA]
