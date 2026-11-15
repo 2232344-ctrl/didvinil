@@ -1,5 +1,5 @@
 {
- "generated": "15.11.2026 17:37",
+ "generated": "15.11.2026 18:38",
  "orders": [
   {
    "number": 47,
@@ -7,7 +7,7 @@
    "type": "програвач",
    "brand": "Telefunken",
    "model": "CS 20",
-   "status": "Прийнято в роботу",
+   "status": "Узгодження",
    "eta": "",
    "updated": "15.11.2026"
   },
@@ -18,6 +18,16 @@
    "brand": "Pioneer",
    "model": "PL-5L",
    "status": "Прийнято в роботу",
+   "eta": "",
+   "updated": "15.11.2026"
+  },
+  {
+   "number": 40,
+   "date": "11.11.2026",
+   "type": "програвач",
+   "brand": "Yamaha",
+   "model": "GT-750",
+   "status": "Узгодження",
    "eta": "",
    "updated": "15.11.2026"
   },
@@ -50,16 +60,6 @@
    "status": "Скасовано",
    "eta": "",
    "updated": "12.11.2026"
-  },
-  {
-   "number": 40,
-   "date": "11.11.2026",
-   "type": "програвач",
-   "brand": "Yamaha",
-   "model": "GT-750",
-   "status": "Прийнято в роботу",
-   "eta": "",
-   "updated": "11.11.2026"
   },
   {
    "number": 39,
