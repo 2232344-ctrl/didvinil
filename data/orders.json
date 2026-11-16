@@ -1,6 +1,16 @@
 {
- "generated": "16.11.2026 16:38",
+ "generated": "16.11.2026 20:38",
  "orders": [
+  {
+   "number": 38,
+   "date": "09.11.2026",
+   "type": "програвач",
+   "brand": "Technics",
+   "model": "SL-1500CEE-K",
+   "status": "Готово",
+   "eta": "",
+   "updated": "16.11.2026"
+  },
   {
    "number": 37,
    "date": "09.11.2026",
@@ -50,16 +60,6 @@
    "status": "Доставка клієнту",
    "eta": "",
    "updated": "15.11.2026"
-  },
-  {
-   "number": 38,
-   "date": "09.11.2026",
-   "type": "програвач",
-   "brand": "Technics",
-   "model": "SL-1500CEE-K",
-   "status": "Ремонт",
-   "eta": "",
-   "updated": "14.11.2026"
   },
   {
    "number": 44,
