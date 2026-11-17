@@ -9,6 +9,7 @@ const CITIES = [
   'odesa'=>['Одеса','Одесі','в Одесі'], 'kharkiv'=>['Харків','Харкові','у Харкові'], 'kryvyi-rih'=>['Кривий Ріг','Кривому Розі','у Кривому Розі'],
 ];
 const MIN_CARDS = 3;
+const VU_VERSION = '2.21'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
 
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES|ENT_SUBSTITUTE, 'UTF-8'); }
 
@@ -235,6 +236,7 @@ function render_page($o){
 </main>
 <footer>
   Рік створення сайту: 2026. З усіх питань звертайтесь: <a href="mailto:vinyl.help.kiev@gmail.com">vinyl.help.kiev@gmail.com</a>
+  <div class="vu-version" style="margin-top:6px">VU <?=VU_VERSION?></div>
 </footer>
 <script>(function(){var k="vinyl-theme",r=document.documentElement;try{var s=localStorage.getItem(k);if(s)r.setAttribute("data-theme",s);}catch(e){}
 document.getElementById("themeBtn").addEventListener("click",function(){var d=r.getAttribute("data-theme");var dark=d?d==="dark":matchMedia("(prefers-color-scheme: dark)").matches;var n=dark?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem(k,n);}catch(e){}});})();</script>
