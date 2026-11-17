@@ -1,5 +1,5 @@
 {
- "generated": "17.11.2026 09:38",
+ "generated": "17.11.2026 11:38",
  "orders": [
   {
    "number": 38,
@@ -8,16 +8,6 @@
    "brand": "Technics",
    "model": "SL-1500CEE-K",
    "status": "Готово до видачі",
-   "eta": "",
-   "updated": "16.11.2026"
-  },
-  {
-   "number": 37,
-   "date": "09.11.2026",
-   "type": "програвач",
-   "brand": "Pro-Ject",
-   "model": "Debut Pro B",
-   "status": "Доставка клієнту",
    "eta": "",
    "updated": "16.11.2026"
   },
