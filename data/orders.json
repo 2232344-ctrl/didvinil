@@ -1,5 +1,5 @@
 {
- "generated": "17.11.2026 11:38",
+ "generated": "17.11.2026 16:38",
  "orders": [
   {
    "number": 38,
@@ -38,16 +38,6 @@
    "brand": "Yamaha",
    "model": "GT-750",
    "status": "Узгодження",
-   "eta": "",
-   "updated": "15.11.2026"
-  },
-  {
-   "number": 10,
-   "date": "11.11.2026",
-   "type": "програвач",
-   "brand": "Audio-Technica",
-   "model": "AT-LP60XBT",
-   "status": "Доставка клієнту",
    "eta": "",
    "updated": "15.11.2026"
   },
