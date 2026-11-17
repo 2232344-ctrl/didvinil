@@ -395,11 +395,11 @@ function normalize(records){
       r.tagList = normTags(r.tags);
       // дата останньої зміни: «Оновлено дд.мм.рррр.» в кінці коментаря піднімає картку вгору
       const um = (r.comment||"").match(/Оновлено\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/i);
-      const upd = um ? new Date(+um[3], +um[2]-1, +um[1], 23, 59, 59).getTime() : null;
+      const upd = um ? new Date(+um[3], +um[2]-1, +um[1], 0, 0, 0).getTime() : null;
       r.ts = parseTimestamp(r.timestamp);
       // дата публікації картки в Instagram теж піднімає її вгору
       const pm = (r.igpub||"").match(/(\d{1,2})\.(\d{1,2})\.(\d{4})/);
-      const pub = pm ? new Date(+pm[3], +pm[2]-1, +pm[1], 23, 59, 59).getTime() : null;
+      const pub = pm ? new Date(+pm[3], +pm[2]-1, +pm[1], 0, 0, 0).getTime() : null;
       if(pub !== null && !isNaN(pub) && (r.ts === null || pub > r.ts)) r.ts = pub;
       if(upd !== null && !isNaN(upd) && (r.ts === null || upd > r.ts)) r.ts = upd;
       r.closed = r.tagList.some(t => t === "зачинено" || t === "закрито");

@@ -55,9 +55,9 @@ function norm_tags($s){
 function split_cities($s){ return array_values(array_filter(array_map('trim', preg_split('/[,;]/u', (string)$s)))); }
 function ts_of($rec){
   $t = 0;
-  if (preg_match('/^(\d{1,2})\.(\d{1,2})\.(\d{4})/', $rec['timestamp'], $m)) $t = mktime(0,0,0,(int)$m[2],(int)$m[1],(int)$m[3]);
-  if (preg_match('/Оновлено\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/u', $rec['comment'], $m)) $t = max($t, mktime(23,59,59,(int)$m[2],(int)$m[1],(int)$m[3]));
-  if (preg_match('/(\d{1,2})\.(\d{1,2})\.(\d{4})/', $rec['igpub'] ?? '', $m)) $t = max($t, mktime(23,59,59,(int)$m[2],(int)$m[1],(int)$m[3]));
+  if (preg_match('/^(\d{1,2})\.(\d{1,2})\.(\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?)?/', $rec['timestamp'], $m)) $t = mktime((int)($m[4]??0),(int)($m[5]??0),(int)($m[6]??0),(int)$m[2],(int)$m[1],(int)$m[3]);
+  if (preg_match('/Оновлено\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/u', $rec['comment'], $m)) $t = max($t, mktime(0,0,0,(int)$m[2],(int)$m[1],(int)$m[3]));
+  if (preg_match('/(\d{1,2})\.(\d{1,2})\.(\d{4})/', $rec['igpub'] ?? '', $m)) $t = max($t, mktime(0,0,0,(int)$m[2],(int)$m[1],(int)$m[3]));
   return $t;
 }
 function map_url($q){ return 'https://www.google.com/maps/search/?api=1&query='.rawurlencode($q); }
