@@ -1,6 +1,16 @@
 {
- "generated": "19.11.2026 16:19",
+ "generated": "19.11.2026 19:16",
  "orders": [
+  {
+   "number": 50,
+   "date": "19.11.2026",
+   "type": "програвач",
+   "brand": "Sony",
+   "model": "PS-X2",
+   "status": "Звернення",
+   "eta": "",
+   "updated": "19.11.2026"
+  },
   {
    "number": 49,
    "date": "19.11.2026",
