@@ -1,5 +1,5 @@
 {
- "generated": "18.11.2026 12:38",
+ "generated": "19.11.2026 11:38",
  "orders": [
   {
    "number": 48,
@@ -7,9 +7,9 @@
    "type": "програвач",
    "brand": "Hitachi",
    "model": "PS-17",
-   "status": "Ремонт",
+   "status": "Готово до видачі",
    "eta": "",
-   "updated": "18.11.2026"
+   "updated": "19.11.2026"
   },
   {
    "number": 45,
