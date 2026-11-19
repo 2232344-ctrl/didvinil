@@ -1,6 +1,16 @@
 {
- "generated": "19.11.2026 11:38",
+ "generated": "19.11.2026 12:03",
  "orders": [
+  {
+   "number": 49,
+   "date": "19.11.2026",
+   "type": "програвач",
+   "brand": "Dual",
+   "model": "CS 741 Q",
+   "status": "Звернення",
+   "eta": "",
+   "updated": "19.11.2026"
+  },
   {
    "number": 48,
    "date": "18.11.2026",
