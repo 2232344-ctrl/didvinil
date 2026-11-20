@@ -1,23 +1,13 @@
 {
- "generated": "20.11.2026 12:16",
+ "generated": "20.11.2026 17:38",
  "orders": [
-  {
-   "number": 52,
-   "date": "20.11.2026",
-   "type": "програвач",
-   "brand": "Yamaha",
-   "model": "YP-211",
-   "status": "Доставка до сервісу",
-   "eta": "",
-   "updated": "20.11.2026"
-  },
   {
    "number": 51,
    "date": "20.11.2026",
    "type": "програвач",
    "brand": "Crosley",
    "model": "T150A-BK",
-   "status": "Звернення",
+   "status": "Готово до видачі",
    "eta": "",
    "updated": "20.11.2026"
   },
