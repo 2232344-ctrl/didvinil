@@ -1,16 +1,6 @@
 {
- "generated": "21.11.2026 11:38",
+ "generated": "21.11.2026 16:50",
  "orders": [
-  {
-   "number": 47,
-   "date": "15.11.2026",
-   "type": "програвач",
-   "brand": "Telefunken",
-   "model": "CS 20",
-   "status": "Готово до видачі",
-   "eta": "",
-   "updated": "21.11.2026"
-  },
   {
    "number": 51,
    "date": "20.11.2026",
