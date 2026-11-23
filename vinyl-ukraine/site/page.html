@@ -106,6 +106,13 @@
   .card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0;}
   .card.pinned{border-color:var(--pin-border);background:var(--pin-bg);}
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .card{position:relative;overflow:hidden;}
+  .card>*:not(.wm){position:relative;}
+  img.wm{position:absolute;right:-14px;bottom:-14px;width:120px;height:120px;object-fit:contain;opacity:.07;transform:rotate(-8deg);pointer-events:none;}
+  .card-head{display:flex;gap:12px;align-items:flex-start;min-width:0;flex:1 1 auto;}
+  .lgwrap{position:relative;width:44px;height:44px;flex:none;}
+  .lgwrap .lgl{position:absolute;inset:0;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff;background:var(--accent);}
+  .lgwrap img.lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border:1px solid var(--border);border-radius:10px;padding:3px;}
   .card-name{font-size:17px;font-weight:700;margin:0;overflow-wrap:anywhere;}
   .badges{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:0 0 auto;}
   .tag-badge,.discount-badge{font-size:11px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;border:1px solid transparent;font-family:inherit;line-height:1.3;}
@@ -177,7 +184,7 @@
 </main>
 <footer>
   Рік створення сайту: 2026. З усіх питань звертайтесь: <a href="mailto:vinyl.help.kiev@gmail.com">vinyl.help.kiev@gmail.com</a>
-  <div class="vu-version" style="margin-top:6px">VU 2.21</div>
+  <div class="vu-version" style="margin-top:6px">VU 2.22</div>
   <div id="visits" style="margin-top:6px" hidden>Відвідувань: <b id="visitsTotal">–</b> · сьогодні: <b id="visitsToday">–</b></div>
 </footer>
 <nav class="seo-links" aria-label="Каталог за містами та категоріями">
@@ -235,7 +242,7 @@ const HEADER_MAP = {
   "website":"website","telegram":"telegram","instagram":"instagram","threads":"threads","facebook":"facebook",
   "місто":"city","адреса":"address","телефон":"phone","коментар":"comment",
   "viber":"viber","whatsapp":"whatsapp","e-mail":"email","email":"email",
-  "discord":"discord","tiktok":"tiktok","youtube":"youtube","pinterest":"pinterest"
+  "discord":"discord","tiktok":"tiktok","youtube":"youtube","pinterest":"pinterest","logo":"logo"
 };
 
 function rowsToRecords(rows){
@@ -421,6 +428,7 @@ function normalize(records){
 function escapeHtml(s){
   return (s||"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
+document.addEventListener("error", e => { const t = e.target; if(t && t.tagName === "IMG" && (t.classList.contains("lg") || t.classList.contains("wm"))) t.remove(); }, true);
 const isOn = v => String(v||"").trim() === "1";
 const $ = id => document.getElementById(id);
 
@@ -435,7 +443,18 @@ function discountText(d){
   return (d.startsWith("-") || d.includes("%")) ? d : "-" + d + "%";
 }
 
+/* Логотип: лише https-картинки (посилання на файл у репозиторії або на сайті); інше ігнорується. */
+function safeLogo(u){
+  u = String(u||"").trim();
+  if(/^https:\/\/\S+\.(png|jpe?g|webp|svg|gif)(\?\S*)?$/i.test(u) || /^https:\/\/raw\.githubusercontent\.com\/\S+$/i.test(u)) return u;
+  return "";
+}
+function logoInitial(name){
+  const m = String(name||"").match(/[A-Za-zА-Яа-яІіЇїЄєҐґ0-9]/);
+  return m ? m[0].toUpperCase() : "•";
+}
 function cardHtml(rec){
+  const logo = safeLogo(rec.logo);
   const isPinned = rec.displayName.trim().toLowerCase() === PIN_NAME.toLowerCase();
   const shown = new Set();
   const links = LINK_DEFS.map(({key,label}) => {
@@ -449,8 +468,12 @@ function cardHtml(rec){
   const tel = rec.phone ? telHref(rec.phone) : null;
   return `
   <article class="card${isPinned ? " pinned" : ""}">
+    ${logo ? `<img class="wm" src="${escapeHtml(logo)}" alt="" aria-hidden="true" loading="lazy">` : ""}
     <div class="card-top">
-      <h2 class="card-name">${escapeHtml(rec.displayName)}</h2>
+      <div class="card-head">
+        <div class="lgwrap" aria-hidden="true"><div class="lgl">${escapeHtml(logoInitial(rec.displayName))}</div>${logo ? `<img class="lg" src="${escapeHtml(logo)}" alt="" loading="lazy">` : ""}</div>
+        <h2 class="card-name">${escapeHtml(rec.displayName)}</h2>
+      </div>
       <div class="badges">
         ${rec.discount ? `<span class="discount-badge">${escapeHtml(discountText(rec.discount))}</span>` : ""}
         ${isOn(rec.recommend) ? `<button type="button" class="tag-badge rec-badge${selectedFlags.has("recommend") ? " active" : ""}" data-flag="recommend">рекомендовано</button>` : ""}

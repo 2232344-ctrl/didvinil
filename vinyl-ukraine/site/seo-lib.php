@@ -9,7 +9,7 @@ const CITIES = [
   'odesa'=>['Одеса','Одесі','в Одесі'], 'kharkiv'=>['Харків','Харкові','у Харкові'], 'kryvyi-rih'=>['Кривий Ріг','Кривому Розі','у Кривому Розі'],
 ];
 const MIN_CARDS = 3;
-const VU_VERSION = '2.21'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
+const VU_VERSION = '2.22'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
 
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES|ENT_SUBSTITUTE, 'UTF-8'); }
 
@@ -30,7 +30,7 @@ function load_csv(){
     'discount'=>['знижка','скидка','discount'],'name'=>['назва/ім\'я','назва/імя','назва','назва/ім’я'],'tags'=>['пропозиції'],
     'website'=>['website'],'telegram'=>['telegram'],'instagram'=>['instagram'],'threads'=>['threads'],'facebook'=>['facebook'],
     'city'=>['місто'],'address'=>['адреса'],'phone'=>['телефон'],'comment'=>['коментар'],'viber'=>['viber'],'whatsapp'=>['whatsapp'],
-    'email'=>['e-mail','email'],'igpub'=>['дата останньої публікації в instagram'],'discord'=>['discord'],'tiktok'=>['tiktok'],'youtube'=>['youtube'],'pinterest'=>['pinterest']];
+    'email'=>['e-mail','email'],'igpub'=>['дата останньої публікації в instagram'],'discord'=>['discord'],'tiktok'=>['tiktok'],'youtube'=>['youtube'],'pinterest'=>['pinterest'],'logo'=>['logo']];
   $rev = []; foreach ($map as $k=>$names) foreach ($names as $n) $rev[$n] = $k;
   $hdr = array_map(fn($x)=>mb_strtolower(trim($x)), array_shift($rows));
   $keys = []; foreach ($hdr as $i=>$x) $keys[$i] = ($x===''&&$i===0) ? 'timestamp' : ($rev[$x] ?? null);
@@ -114,6 +114,11 @@ function loc_lines($r, $city){
   return $lines;
 }
 
+function safe_logo($u){
+  $u = trim((string)$u);
+  if (preg_match('~^https://\S+\.(png|jpe?g|webp|svg|gif)(\?\S*)?$~i', $u) || preg_match('~^https://raw\.githubusercontent\.com/\S+$~i', $u)) return $u;
+  return '';
+}
 function card_html($r, $city){
   $name = display_name($r);
   $links = ''; $shown = [];
@@ -132,7 +137,10 @@ function card_html($r, $city){
   $disc = '';
   if ($r['discount']!=='') { $d = $r['discount']; $d = (strpos($d,'-')===0 || strpos($d,'%')!==false) ? $d : '-'.$d.'%'; $disc = '<span class="discount-badge">'.h($d).'</span>'; }
   $badges = $disc.(is_on($r['recommend'])?'<span class="tag-badge rec-badge">рекомендовано</span>':'').(is_on($r['verified'])?'<span class="tag-badge ver-badge">перевірено</span>':'');
-  return '<article class="card"><div class="card-top"><h3 class="card-name">'.h($name).'</h3><div class="badges">'.$badges.'</div></div>'
+  $logo = safe_logo($r['logo'] ?? '');
+  $init = preg_match('/[\p{L}\p{N}]/u', $name, $im) ? mb_strtoupper($im[0], 'UTF-8') : '•';
+  return '<article class="card">'.($logo ? '<img class="wm" src="'.h($logo).'" alt="" aria-hidden="true" loading="lazy">' : '')
+    .'<div class="card-top"><div class="card-head"><div class="lgwrap" aria-hidden="true"><div class="lgl">'.h($init).'</div>'.($logo ? '<img class="lg" src="'.h($logo).'" alt="" loading="lazy">' : '').'</div><h3 class="card-name">'.h($name).'</h3></div><div class="badges">'.$badges.'</div></div>'
     .$loc.($chips?'<div class="chips">'.$chips.'</div>':'')
     .($r['comment']!==''?'<div class="comment">'.h($r['comment']).'</div>':'')
     .($ph?'<div class="phone">☎ '.implode(', ', $ph).'</div>':'')
@@ -237,6 +245,7 @@ function render_page($o){
 <footer>
   Рік створення сайту: 2026. З усіх питань звертайтесь: <a href="mailto:vinyl.help.kiev@gmail.com">vinyl.help.kiev@gmail.com</a>
   <div class="vu-version" style="margin-top:6px">VU <?=VU_VERSION?></div>
+  <script>document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName==='IMG'&&(t.classList.contains('lg')||t.classList.contains('wm')))t.remove()},true);</script>
 </footer>
 <script>(function(){var k="vinyl-theme",r=document.documentElement;try{var s=localStorage.getItem(k);if(s)r.setAttribute("data-theme",s);}catch(e){}
 document.getElementById("themeBtn").addEventListener("click",function(){var d=r.getAttribute("data-theme");var dark=d?d==="dark":matchMedia("(prefers-color-scheme: dark)").matches;var n=dark?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem(k,n);}catch(e){}});})();</script>
@@ -332,6 +341,13 @@ const SEO_CSS = <<<'CSS'
   .card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0;}
   .card.pinned{border-color:var(--pin-border);background:var(--pin-bg);}
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .card{position:relative;overflow:hidden;}
+  .card>*:not(.wm){position:relative;}
+  img.wm{position:absolute;right:-14px;bottom:-14px;width:120px;height:120px;object-fit:contain;opacity:.07;transform:rotate(-8deg);pointer-events:none;}
+  .card-head{display:flex;gap:12px;align-items:flex-start;min-width:0;flex:1 1 auto;}
+  .lgwrap{position:relative;width:44px;height:44px;flex:none;}
+  .lgwrap .lgl{position:absolute;inset:0;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff;background:var(--accent);}
+  .lgwrap img.lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border:1px solid var(--border);border-radius:10px;padding:3px;}
   .card-name{font-size:17px;font-weight:700;margin:0;overflow-wrap:anywhere;}
   .badges{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:0 0 auto;}
   .tag-badge,.discount-badge{font-size:11px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;border:1px solid transparent;font-family:inherit;line-height:1.3;}
