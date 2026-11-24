@@ -605,7 +605,6 @@
  },
  "r0020": {
   "hidden": false,
-  "mod": 1794991014721,
   "ord": 20,
   "v": [
    "22.10.2026 17:10:23",
@@ -626,13 +625,14 @@
    "",
    "https://www.tiktok.com/@440.com.ua",
    "",
-   "",
+   "https://raw.githubusercontent.com/2232344-ctrl/didvinil/main/vinyl-ukraine/logos/r0020.png",
    "https://www.youtube.com/@440Hz_",
    "1",
    "18.11.2026",
    "",
    ""
-  ]
+  ],
+  "mod": 1795446593774
  },
  "r0021": {
   "hidden": false,
@@ -667,13 +667,12 @@
  },
  "r0022": {
   "hidden": false,
-  "mod": 1795445000011,
   "ord": 22,
   "v": [
    "23.11.2026 19:03:00",
    "",
    "MELOMAN IN UA",
-   "програвачі, валізки, ремонт",
+   "програвачі, валізки, ремонт, платівки, продаж",
    "https://meloman.in.ua/",
    "https://t.me/manager_ol",
    "https://www.instagram.com/meloman.in.ua",
@@ -694,7 +693,8 @@
    "19.11.2026",
    "viber://chat?number=%2B380683172348",
    ""
-  ]
+  ],
+  "mod": 1795453292292
  },
  "r0023": {
   "ord": 23,
@@ -2380,7 +2380,6 @@
  },
  "r0082": {
   "hidden": false,
-  "mod": 1794243199934,
   "ord": 82,
   "v": [
    "22.10.2026 10:51:43",
@@ -2401,12 +2400,14 @@
    "",
    "",
    "",
-   "",
+   "https://raw.githubusercontent.com/2232344-ctrl/didvinil/main/vinyl-ukraine/logos/r0082.png",
    "",
    "1",
    "",
+   "",
    ""
-  ]
+  ],
+  "mod": 1795447486070
  },
  "r0083": {
   "ord": 83,
