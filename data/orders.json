@@ -1,5 +1,5 @@
 {
- "generated": "24.11.2026 10:09",
+ "generated": "24.11.2026 11:55",
  "orders": [
   {
    "number": 55,
@@ -7,7 +7,7 @@
    "type": "програвач",
    "brand": "Sony",
    "model": "PS-LX310BT",
-   "status": "Звернення",
+   "status": "Прийнято в роботу",
    "eta": "",
    "updated": "24.11.2026"
   },
