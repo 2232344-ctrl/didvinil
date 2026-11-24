@@ -9,7 +9,7 @@ const CITIES = [
   'odesa'=>['Одеса','Одесі','в Одесі'], 'kharkiv'=>['Харків','Харкові','у Харкові'], 'kryvyi-rih'=>['Кривий Ріг','Кривому Розі','у Кривому Розі'],
 ];
 const MIN_CARDS = 3;
-const VU_VERSION = '2.22'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
+const VU_VERSION = '2.23'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
 
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES|ENT_SUBSTITUTE, 'UTF-8'); }
 

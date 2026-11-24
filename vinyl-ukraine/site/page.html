@@ -56,7 +56,7 @@
     background:var(--bg); border-bottom:1px solid var(--border);
     transition:transform .25s ease;
   }
-  @media (max-width:640px){ header.header-hidden{transform:translateY(-100%);} }
+  header.header-hidden{transform:translateY(-100%);}
   .header-inner{max-width:1080px;margin:0 auto;padding:14px 0;}
   .title-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px;}
   h1{font-size:22px;margin:0;letter-spacing:.3px;}
@@ -96,6 +96,11 @@
   .quick button small{opacity:.65;font-size:11px;margin-left:2px;}
   .quick button.limit-shake{animation:shake .3s;}
   .quick button.on{background:var(--accent);color:#fff;border-color:var(--accent-dark);}
+  @media (min-width:900px){
+    .filter-row{display:flex;align-items:center;gap:10px;}
+    .filter-row .controls{flex:1 1 auto;min-width:240px;flex-wrap:nowrap;}
+    .filter-row .quick{margin-top:0;flex:0 1 auto;flex-wrap:nowrap;white-space:nowrap;}
+  }
   main{max-width:1080px;margin:0 auto;padding:14px 16px 16px;}
   .count{color:var(--muted);font-size:13px;margin-bottom:8px;}
   .active-filters{display:none;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:10px;}
@@ -167,6 +172,7 @@
       <span>·</span>
       <span id="totalCount">0 записів</span>
     </div>
+    <div class="filter-row">
     <div class="controls">
       <div class="search-wrap">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -174,6 +180,7 @@
       </div>
     </div>
     <div class="quick" id="quick" aria-label="Популярні теги"></div>
+    </div>
   </div>
 </header>
 <main>
@@ -184,7 +191,7 @@
 </main>
 <footer>
   Рік створення сайту: 2026. З усіх питань звертайтесь: <a href="mailto:vinyl.help.kiev@gmail.com">vinyl.help.kiev@gmail.com</a>
-  <div class="vu-version" style="margin-top:6px">VU 2.22</div>
+  <div class="vu-version" style="margin-top:6px">VU 2.23</div>
   <div id="visits" style="margin-top:6px" hidden>Відвідувань: <b id="visitsTotal">–</b> · сьогодні: <b id="visitsToday">–</b></div>
 </footer>
 <nav class="seo-links" aria-label="Каталог за містами та категоріями">
@@ -735,7 +742,7 @@ $("activeFilters").addEventListener("click", e => {
   });
 })();
 
-/* Шапка ховається при скролі вниз (мобільні), кнопка «нагору» */
+/* Шапка ховається при скролі вниз (усі екрани), кнопка «нагору» */
 (function(){
   const header = document.querySelector("header"), top = $("toTop");
   let lastY = scrollY, ticking = false;
