@@ -1,5 +1,5 @@
 {
- "generated": "24.11.2026 14:29",
+ "generated": "24.11.2026 15:22",
  "orders": [
   {
    "number": 56,
@@ -17,6 +17,16 @@
    "type": "програвач",
    "brand": "Sony",
    "model": "PS-LX310BT",
+   "status": "Готово до видачі",
+   "eta": "",
+   "updated": "24.11.2026"
+  },
+  {
+   "number": 22,
+   "date": "27.10.2026",
+   "type": "програвач",
+   "brand": "Crosley",
+   "model": "CR6231D-GR4",
    "status": "Готово до видачі",
    "eta": "",
    "updated": "24.11.2026"
@@ -160,16 +170,6 @@
    "status": "Звернення",
    "eta": "",
    "updated": "02.11.2026"
-  },
-  {
-   "number": 22,
-   "date": "27.10.2026",
-   "type": "програвач",
-   "brand": "Crosley",
-   "model": "CR6231D-GR4",
-   "status": "Узгодження",
-   "eta": "",
-   "updated": "27.10.2026"
   },
   {
    "number": 19,
