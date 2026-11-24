@@ -1,5 +1,5 @@
 {
- "generated": "24.11.2026 15:22",
+ "generated": "24.11.2026 16:03",
  "orders": [
   {
    "number": 56,
@@ -100,16 +100,6 @@
    "status": "Узгодження",
    "eta": "",
    "updated": "15.11.2026"
-  },
-  {
-   "number": 44,
-   "date": "12.11.2026",
-   "type": "програвач",
-   "brand": "Lenco",
-   "model": "LSA-071SI",
-   "status": "Скасовано",
-   "eta": "",
-   "updated": "12.11.2026"
   },
   {
    "number": 39,
