@@ -9,7 +9,7 @@ const CITIES = [
   'odesa'=>['Одеса','Одесі','в Одесі'], 'kharkiv'=>['Харків','Харкові','у Харкові'], 'kryvyi-rih'=>['Кривий Ріг','Кривому Розі','у Кривому Розі'],
 ];
 const MIN_CARDS = 3;
-const VU_VERSION = '2.23'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
+const VU_VERSION = '2.24'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
 
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES|ENT_SUBSTITUTE, 'UTF-8'); }
 
@@ -347,7 +347,7 @@ const SEO_CSS = <<<'CSS'
   .card-head{display:flex;gap:12px;align-items:flex-start;min-width:0;flex:1 1 auto;}
   .lgwrap{position:relative;width:44px;height:44px;flex:none;}
   .lgwrap .lgl{position:absolute;inset:0;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff;background:var(--accent);}
-  .lgwrap img.lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border:1px solid var(--border);border-radius:10px;padding:3px;}
+  .lgwrap img.lg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:10px;}
   .card-name{font-size:17px;font-weight:700;margin:0;overflow-wrap:anywhere;}
   .badges{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:0 0 auto;}
   .tag-badge,.discount-badge{font-size:11px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;border:1px solid transparent;font-family:inherit;line-height:1.3;}
