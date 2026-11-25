@@ -1,5 +1,5 @@
 {
- "generated": "25.11.2026 15:49",
+ "generated": "25.11.2026 17:02",
  "orders": [
   {
    "number": 59,
@@ -28,16 +28,6 @@
    "brand": "Akai",
    "model": "AP-A50",
    "status": "Звернення",
-   "eta": "",
-   "updated": "25.11.2026"
-  },
-  {
-   "number": 56,
-   "date": "25.11.2026",
-   "type": "програвач",
-   "brand": "Sony",
-   "model": "PS-LX300USB",
-   "status": "Готово до видачі",
    "eta": "",
    "updated": "25.11.2026"
   },
