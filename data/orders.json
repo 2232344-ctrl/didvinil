@@ -1,15 +1,15 @@
 {
- "generated": "24.11.2026 18:38",
+ "generated": "25.11.2026 11:45",
  "orders": [
   {
    "number": 56,
-   "date": "24.11.2026",
+   "date": "25.11.2026",
    "type": "програвач",
    "brand": "Sony",
    "model": "PS-LX300USB",
-   "status": "Звернення",
+   "status": "Прийнято в роботу",
    "eta": "",
-   "updated": "24.11.2026"
+   "updated": "25.11.2026"
   },
   {
    "number": 55,
