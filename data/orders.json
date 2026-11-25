@@ -1,6 +1,16 @@
 {
- "generated": "25.11.2026 13:55",
+ "generated": "25.11.2026 15:25",
  "orders": [
+  {
+   "number": 58,
+   "date": "25.11.2026",
+   "type": "програвач",
+   "brand": "Retrolife",
+   "model": "HP-H0056",
+   "status": "Звернення",
+   "eta": "",
+   "updated": "25.11.2026"
+  },
   {
    "number": 57,
    "date": "25.11.2026",
