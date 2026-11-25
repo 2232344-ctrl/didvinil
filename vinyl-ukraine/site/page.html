@@ -195,7 +195,7 @@
 </main>
 <footer>
   Рік створення сайту: 2026. З усіх питань звертайтесь: <a href="mailto:vinyl.help.kiev@gmail.com">vinyl.help.kiev@gmail.com</a>
-  <div class="vu-version" style="margin-top:6px">VU 2.25</div>
+  <div class="vu-version" style="margin-top:6px">VU 2.26</div>
   <div id="visits" style="margin-top:6px" hidden>Відвідувань: <b id="visitsTotal">–</b> · сьогодні: <b id="visitsToday">–</b></div>
 </footer>
 <nav class="seo-links" aria-label="Каталог за містами та категоріями">
@@ -620,7 +620,10 @@ function setSyncStatus(state, text){
   $("syncText").textContent = text;
 }
 
+let LAST_TEXT = "", LAST_LOAD = 0;
 function applyCsv(text){
+  if(text === LAST_TEXT && RECORDS.length) return; // дані не змінилися — без перемальовування
+  LAST_TEXT = text;
   RECORDS = normalize(rowsToRecords(parseCSV(text)));
   $("emptyState").innerHTML = EMPTY_DEFAULT;
   $("totalCount").textContent = RECORDS.length + " записів";
@@ -637,7 +640,7 @@ async function loadData(){
     if(!res.ok) throw new Error("HTTP " + res.status);
     const text = await res.text();
     if(parseCSV(text).length < 2) throw new Error("empty");
-    applyCsv(text);
+    applyCsv(text); LAST_LOAD = Date.now();
     try{ localStorage.setItem(CACHE_KEY, JSON.stringify({t:Date.now(), text})); }catch(e){}
     const lm = res.headers.get("Last-Modified");
     const when = lm ? new Date(lm) : new Date();
@@ -767,7 +770,7 @@ $("activeFilters").addEventListener("click", e => {
 loadState();
 loadData();
 setInterval(() => { if(!document.hidden) loadData(); }, 10 * 60 * 1000);
-document.addEventListener("visibilitychange", () => { if(!document.hidden) loadData(); });
+document.addEventListener("visibilitychange", () => { if(!document.hidden && Date.now() - LAST_LOAD > 2 * 60 * 1000) loadData(); });
 </script>
 </body>
 </html>

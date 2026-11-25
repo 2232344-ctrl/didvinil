@@ -9,7 +9,7 @@ const CITIES = [
   'odesa'=>['Одеса','Одесі','в Одесі'], 'kharkiv'=>['Харків','Харкові','у Харкові'], 'kryvyi-rih'=>['Кривий Ріг','Кривому Розі','у Кривому Розі'],
 ];
 const MIN_CARDS = 3;
-const VU_VERSION = '2.25'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
+const VU_VERSION = '2.26'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
 
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES|ENT_SUBSTITUTE, 'UTF-8'); }
 
@@ -173,13 +173,15 @@ function cat_rows($rows, $slug, $city=''){
   return $out;
 }
 function sort_rows(&$list){
-  usort($list, function($a,$b){
-    $d0 = strtotime('today -2 days'); /* FRESH_DAYS = 3 */ $fa = ts_of($a)>=$d0; $fb = ts_of($b)>=$d0;
+  $d0 = strtotime('today -2 days'); /* FRESH_DAYS = 3 */
+  foreach ($list as &$r) $r['_ts'] = ts_of($r); unset($r); // час рахується один раз, а не в кожному порівнянні
+  usort($list, function($a,$b) use ($d0){
+    $fa = $a['_ts']>=$d0; $fb = $b['_ts']>=$d0;
     if ($fa !== $fb) return $fa ? -1 : 1;
     $ra = $fa?0:(is_on($a['recommend'])?0:(is_on($a['verified'])?1:2)); $rb = $fb?0:(is_on($b['recommend'])?0:(is_on($b['verified'])?1:2));
     if ($ra !== $rb) return $ra<=>$rb;
     if ($ra < 2 && !$fa && !$fb) return day_hash($a)<=>day_hash($b);  // рекомендовані: щодня випадковий порядок
-    return ts_of($b)<=>ts_of($a);
+    return $b['_ts']<=>$a['_ts'];
   });
 }
 function day_hash($r){ return crc32(date('Y-m-d').'|'.($r['name'] ?? '')); }

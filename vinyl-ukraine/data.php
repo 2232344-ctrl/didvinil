@@ -2,12 +2,12 @@
 /**
  * VINYL UKRAINE — серверний кеш таблиці.
  *
- * Раз на 10 хвилин завантажує опубліковану Google-таблицю (CSV),
+ * Раз на 10 хвилин завантажує data.csv з GitHub (репозиторій didvinil),
  * зберігає повну копію у файл на хостингу і віддає її всім відвідувачам.
- * Посилання на Google у коді сторінки не потрібне.
+ * Прямого посилання на GitHub у коді сторінки немає.
  */
 
-// Джерело: опублікована CSV-таблиця (змінна середовища потрібна лише для тестів).
+// Джерело: data.csv на GitHub (змінна середовища потрібна лише для тестів).
 $SOURCE_URL = getenv('VINYL_SOURCE_URL') ?: 'https://raw.githubusercontent.com/2232344-ctrl/didvinil/main/vinyl-ukraine/data.csv';
 $TTL          = 600;   // як довго копія вважається свіжою, секунд
 $RETRY_AFTER  = 60;    // пауза після невдалої спроби, секунд
@@ -30,7 +30,7 @@ if (is_dir($dir) && !is_file($dir . '/.htaccess')) {
 
 function looks_like_csv($body, $max) {
     if (!is_string($body) || $body === '' || strlen($body) > $max) return false;
-    if (stripos($body, '<html') !== false) return false;       // сторінка помилки Google
+    if (stripos($body, '<html') !== false) return false;       // HTML-сторінка помилки замість CSV
     $nl = strpos($body, "\n");
     if ($nl === false) return false;
     $header = mb_strtolower(substr($body, 0, $nl), 'UTF-8');
