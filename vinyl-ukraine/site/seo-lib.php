@@ -9,7 +9,7 @@ const CITIES = [
   'odesa'=>['Одеса','Одесі','в Одесі'], 'kharkiv'=>['Харків','Харкові','у Харкові'], 'kryvyi-rih'=>['Кривий Ріг','Кривому Розі','у Кривому Розі'],
 ];
 const MIN_CARDS = 3;
-const VU_VERSION = '2.24'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
+const VU_VERSION = '2.25'; /* версія сайту: VU 2.21 і далі; змінювати разом з page.html і CHANGELOG.txt */
 
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES|ENT_SUBSTITUTE, 'UTF-8'); }
 
@@ -207,6 +207,10 @@ function render_page($o){
 <meta property="og:image" content="<?=SITE?>/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#b5482b">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23181613'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%23b5482b'/%3E%3Ccircle cx='50' cy='50' r='3' fill='%23181613'/%3E%3C/svg%3E">
 <script type="application/ld+json"><?=json_encode($o['ld'], JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)?></script>
 <style><?=SEO_CSS?></style>
