@@ -1,6 +1,16 @@
 {
- "generated": "25.11.2026 11:45",
+ "generated": "25.11.2026 13:05",
  "orders": [
+  {
+   "number": 57,
+   "date": "25.11.2026",
+   "type": "програвач",
+   "brand": "Akai",
+   "model": "AP-A50",
+   "status": "Звернення",
+   "eta": "",
+   "updated": "25.11.2026"
+  },
   {
    "number": 56,
    "date": "25.11.2026",
