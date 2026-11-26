@@ -1,5 +1,5 @@
 {
- "generated": "26.11.2026 14:19",
+ "generated": "26.11.2026 17:38",
  "orders": [
   {
    "number": 61,
@@ -18,6 +18,16 @@
    "brand": "Audio-Technica",
    "model": "AT-LP3",
    "status": "Звернення",
+   "eta": "",
+   "updated": "26.11.2026"
+  },
+  {
+   "number": 53,
+   "date": "26.11.2026",
+   "type": "програвач",
+   "brand": "Denon",
+   "model": "DP-47F",
+   "status": "Діагностика",
    "eta": "",
    "updated": "26.11.2026"
   },
@@ -100,16 +110,6 @@
    "status": "Прийнято в роботу",
    "eta": "",
    "updated": "23.11.2026"
-  },
-  {
-   "number": 53,
-   "date": "22.11.2026",
-   "type": "програвач",
-   "brand": "Denon",
-   "model": "DP-47F",
-   "status": "Доставка до сервісу",
-   "eta": "",
-   "updated": "22.11.2026"
   },
   {
    "number": 45,
