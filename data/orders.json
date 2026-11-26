@@ -1,12 +1,12 @@
 {
- "generated": "26.11.2026 14:14",
+ "generated": "26.11.2026 14:18",
  "orders": [
   {
    "number": 61,
    "date": "26.11.2026",
-   "type": "",
-   "brand": "",
-   "model": "",
+   "type": "програвач",
+   "brand": "Pro-Ject",
+   "model": "Debut PRO B",
    "status": "Звернення",
    "eta": "",
    "updated": "26.11.2026"
