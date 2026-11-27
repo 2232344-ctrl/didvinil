@@ -1,5 +1,5 @@
 {
- "generated": "26.11.2026 18:38",
+ "generated": "27.11.2026 09:38",
  "orders": [
   {
    "number": 61,
@@ -68,16 +68,6 @@
    "brand": "Sony",
    "model": "PS-LX310BT",
    "status": "Готово до видачі",
-   "eta": "",
-   "updated": "24.11.2026"
-  },
-  {
-   "number": 35,
-   "date": "04.11.2026",
-   "type": "програвач",
-   "brand": "TEAM",
-   "model": "6010 P",
-   "status": "Узгодження",
    "eta": "",
    "updated": "24.11.2026"
   },
