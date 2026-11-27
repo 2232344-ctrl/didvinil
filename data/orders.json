@@ -1,5 +1,5 @@
 {
- "generated": "27.11.2026 11:37",
+ "generated": "27.11.2026 19:38",
  "orders": [
   {
    "number": 51,
@@ -8,6 +8,16 @@
    "brand": "Crosley",
    "model": "T150A-BK",
    "status": "Доставка клієнту",
+   "eta": "",
+   "updated": "27.11.2026"
+  },
+  {
+   "number": 45,
+   "date": "15.11.2026",
+   "type": "програвач",
+   "brand": "Pioneer",
+   "model": "PL-5L",
+   "status": "Ремонт",
    "eta": "",
    "updated": "27.11.2026"
   },
@@ -110,16 +120,6 @@
    "status": "Прийнято в роботу",
    "eta": "",
    "updated": "23.11.2026"
-  },
-  {
-   "number": 45,
-   "date": "15.11.2026",
-   "type": "програвач",
-   "brand": "Pioneer",
-   "model": "PL-5L",
-   "status": "Замовлено запчастини",
-   "eta": "",
-   "updated": "22.11.2026"
   },
   {
    "number": 50,
